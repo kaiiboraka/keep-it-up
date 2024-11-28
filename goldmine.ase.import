@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cy3osm7yx0jg6"
+path="res://.godot/imported/goldmine.ase-5c58bb4de737fa4dae7f216992cf087d.res"
+
+[deps]
+
+source_file="res://goldmine.ase"
+dest_files=["res://.godot/imported/goldmine.ase-5c58bb4de737fa4dae7f216992cf087d.res"]
+
+[params]
+

@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyxg1mloo3pbl"]
+
+[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_48ufy"]
+[ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Allies/Flying/AllyFlying.cs" id="2_12wjf"]
+[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="3_2up8b"]
+[ext_resource type="SpriteFrames" uid="uid://31y58dn6sfmi" path="res://_Assets/Characters/Enemies/Flying/flying_grunt.res" id="4_xttlr"]
+[ext_resource type="AnimationLibrary" uid="uid://h7psrva7xrqc" path="res://_Assets/Characters/Enemies/Flying/FlyingAnimations.res" id="5_ew5pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0fgx"]
+size = Vector2(64, 64)
+
+[node name="Ally_Flying" instance=ExtResource("1_48ufy")]
+motion_mode = 1
+script = ExtResource("2_12wjf")
+SceneToSpawn = ExtResource("3_2up8b")
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = ExtResource("4_xttlr")
+animation = &"Attack"
+autoplay = "Idle"
+
+[node name="AttackHitbox" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_k0fgx")
+
+[node name="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": ExtResource("5_ew5pd")
+}

@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2d7u3psl8w1g"]
+[gd_scene load_steps=5 format=3 uid="uid://c2d7u3psl8w1g"]
 
 [ext_resource type="Script" uid="uid://oifbjyaobcdc" path="res://_Assets/Buildings/TowerBuildings/Building.cs" id="1_27t0t"]
 [ext_resource type="Texture2D" uid="uid://bu7qjneeusdn0" path="res://_Assets/Buildings/TowerBuildings/barracks.png" id="1_58yak"]
+[ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="3_o42as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6qc"]
 size = Vector2(96, 36)
 
 [node name="Building" type="RigidBody2D"]
+position = Vector2(0, -36)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_27t0t")
@@ -32,3 +34,9 @@ texture = ExtResource("1_58yak")
 [node name="sprite_construction" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_58yak")
+
+[node name="SpawnerRight" parent="." instance=ExtResource("3_o42as")]
+position = Vector2(40, 36)
+
+[node name="SpawnerLeft" parent="." instance=ExtResource("3_o42as")]
+position = Vector2(-40, 36)

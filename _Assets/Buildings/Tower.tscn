@@ -9,14 +9,13 @@
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_7vsah")
 
-[node name="Building_Flying" parent="." instance=ExtResource("2_7vsah")]
-position = Vector2(0, -126)
-
-[node name="Building_Magic" parent="." instance=ExtResource("3_6qcbo")]
-position = Vector2(0, -90)
-
 [node name="Building_Melee" parent="." instance=ExtResource("4_vjt4r")]
-position = Vector2(0, -18)
 
 [node name="Building_Ranged" parent="." instance=ExtResource("5_fw406")]
-position = Vector2(0, -54)
+position = Vector2(0, -105)
+
+[node name="Building_Magic" parent="." instance=ExtResource("3_6qcbo")]
+position = Vector2(0, -168)
+
+[node name="Building_Flying" parent="." instance=ExtResource("2_7vsah")]
+position = Vector2(0, -225)

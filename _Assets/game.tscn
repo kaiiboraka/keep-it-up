@@ -13,27 +13,29 @@
 script = ExtResource("1_njsul")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 180)
-zoom = Vector2(2, 2)
+position = Vector2(0, 360)
 script = ExtResource("1_0hivi")
-gameSize = 2.0
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(0, 180)
+position = Vector2(0, 361)
 texture = ExtResource("2_ogrtk")
 
 [node name="Floor" parent="." instance=ExtResource("3_ho2al")]
-position = Vector2(0, 280)
+position = Vector2(0, 590)
 
 [node name="Tower" parent="." instance=ExtResource("4_i2y2s")]
-position = Vector2(0, 295)
+position = Vector2(0, 590)
 
 [node name="Goldmine" parent="." instance=ExtResource("5_muavb")]
-position = Vector2(128, 295)
+position = Vector2(256, 590)
 
 [node name="Goldmine2" parent="." instance=ExtResource("5_muavb")]
-position = Vector2(-128, 295)
+position = Vector2(-256, 590)
 
-[node name="Spawner" parent="." instance=ExtResource("7_w0ekb")]
-position = Vector2(257, 169)
+[node name="FlyingSpawner_Right" parent="." instance=ExtResource("7_w0ekb")]
+position = Vector2(650, 400)
+SceneToSpawn = ExtResource("8_n5ola")
+
+[node name="FlyingSpawner_Left" parent="." instance=ExtResource("7_w0ekb")]
+position = Vector2(-650, 400)
 SceneToSpawn = ExtResource("8_n5ola")

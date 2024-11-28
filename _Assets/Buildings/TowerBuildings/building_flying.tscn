@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://gk36bmyquu56" path="res://_Assets/Buildings/TowerBuildings/roost.png" id="2_ivn3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yv4m"]
-size = Vector2(48, 36)
+size = Vector2(96, 54)
 
 [node name="Building_Flying" instance=ExtResource("1_in1lu")]
+position = Vector2(0, -27)
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_1yv4m")
 
 [node name="sprite_rank1" parent="." index="1"]
 texture = ExtResource("2_ivn3q")
+
+[node name="SpawnerRight" parent="." index="6"]
+position = Vector2(28, 27)
+
+[node name="SpawnerLeft" parent="." index="7"]
+position = Vector2(-28, 27)

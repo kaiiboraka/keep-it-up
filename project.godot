@@ -32,7 +32,7 @@ project/assembly_name="Keep It Up"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/DragNDropNodes/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/DragNDropNodes/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg")
 
 [file_customization]
 

@@ -73,6 +73,16 @@ public static class NumericExtensions
     {
         return x < -Mathf.Epsilon;
     }
+    
+    public static bool IsEven(this int x)
+    {
+        return x % 2 == 0;
+    }
+    
+    public static bool IsOdd(this int x)
+    {
+        return x % 2 != 0;
+    }
 
     public static HorizontalDirection HorizontalDirection(this int x)
     {

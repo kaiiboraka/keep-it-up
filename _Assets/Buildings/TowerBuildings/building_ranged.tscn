@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bpg5qemxpd4u0" path="res://_Assets/Buildings/TowerBuildings/ranged.png" id="2_7incl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfd05"]
-size = Vector2(80, 36)
+size = Vector2(160, 66)
 
 [node name="Building_Ranged" instance=ExtResource("1_1rpow")]
+position = Vector2(0, -33)
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_pfd05")
 
 [node name="sprite_rank1" parent="." index="1"]
 texture = ExtResource("2_7incl")
+
+[node name="SpawnerRight" parent="." index="6"]
+position = Vector2(36, 33)
+
+[node name="SpawnerLeft" parent="." index="7"]
+position = Vector2(-36, 33)

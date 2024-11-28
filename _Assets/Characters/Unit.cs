@@ -15,6 +15,7 @@ public partial class Unit : CharacterBody2D
     Timer attackTimer;
     int currentSpeed;
 
+    [Export] bool isHostile = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -26,10 +27,17 @@ public partial class Unit : CharacterBody2D
         
         currentHealth = maxHealth;
         currentSpeed = maxSpeed;
-        
-        if (GetGlobalPosition().X < 0)
-            Scale.FaceRight();
-        else Scale.FaceLeft();
+
+        // Scale = GetGlobalPosition().X > 0 ? Scale.FaceRight() : Scale.FaceLeft();
+        var boolMatrix = (GlobalPosition.X < 0).Int() + isHostile.Int();
+        if (boolMatrix.IsEven())
+        {
+            this.FaceLeft();
+        }
+        else
+        {
+            this.FaceRight();
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -44,7 +52,7 @@ public partial class Unit : CharacterBody2D
     public virtual void Move(double delta)
     {
         var velocity = Velocity;
-        velocity.X = currentSpeed * -Scale.Sign().X;
+        velocity.X = currentSpeed * -GlobalPosition.Sign().X;
         if (MotionMode == MotionModeEnum.Grounded)
         {
             velocity.Y += 9.8f;
@@ -56,7 +64,7 @@ public partial class Unit : CharacterBody2D
         
         SetVelocity(velocity);
         MoveAndSlide();
-        OnDamage(1);
+        // OnDamage(1);
     }
 
     public virtual void StartAttacking()

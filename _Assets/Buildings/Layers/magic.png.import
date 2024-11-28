@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwiijnbrchwqe"
-path="res://.godot/imported/magic.png-41fff141a7c762644847c2b078de73e7.ctex"
+path="res://.godot/imported/magic.png-e6ddebde170cdecd20e448d327ce321a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tower/magic.png"
-dest_files=["res://.godot/imported/magic.png-41fff141a7c762644847c2b078de73e7.ctex"]
+source_file="res://_Assets/Buildings/Layers/magic.png"
+dest_files=["res://.godot/imported/magic.png-e6ddebde170cdecd20e448d327ce321a.ctex"]
 
 [params]
 

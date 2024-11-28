@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnfi4sckqopv5"]
 
-[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://Tower/building.tscn" id="1_in1lu"]
-[ext_resource type="Texture2D" uid="uid://gk36bmyquu56" path="res://Tower/roost.png" id="2_ivn3q"]
+[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/Layers/building.tscn" id="1_in1lu"]
+[ext_resource type="Texture2D" uid="uid://gk36bmyquu56" path="res://_Assets/Buildings/Layers/roost.png" id="2_ivn3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yv4m"]
 size = Vector2(48, 36)

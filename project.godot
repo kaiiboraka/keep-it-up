@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Keep It Up"
-run/main_scene="res://game.tscn"
+run/main_scene="res://_Assets/game.tscn"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=320
+window/size/mode=3
+window/stretch/aspect="keep_width"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 
@@ -22,8 +30,9 @@ project/assembly_name="Keep It Up"
 [file_customization]
 
 folder_colors={
-"res://Level/": "purple",
-"res://Tower/": "gray"
+"res://_Assets/Buildings/": "teal",
+"res://_Assets/Characters/": "blue",
+"res://_Assets/Level/": "purple"
 }
 
 [rendering]

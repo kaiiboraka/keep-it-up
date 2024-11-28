@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jmvvrpaxdadr"]
 
-[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://Tower/building.tscn" id="1_516b5"]
-[ext_resource type="Texture2D" uid="uid://bwiijnbrchwqe" path="res://Tower/magic.png" id="2_urcmo"]
+[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/Layers/building.tscn" id="1_516b5"]
+[ext_resource type="Texture2D" uid="uid://bwiijnbrchwqe" path="res://_Assets/Buildings/Layers/magic.png" id="2_urcmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_516b5"]
 size = Vector2(64, 36)

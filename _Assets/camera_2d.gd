@@ -9,7 +9,7 @@ func change_viewport_resolution(size: Vector2) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	change_viewport_resolution(Vector2(640,320))
+#	change_viewport_resolution(Vector2(640,320))
 	pass # Replace with function body.
 
 

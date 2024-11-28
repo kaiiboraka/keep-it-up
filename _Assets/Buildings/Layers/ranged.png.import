@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w02p4i0in0hp"
-path="res://.godot/imported/background.png-47debb3bfbcb3feff6312c6444b82560.ctex"
+uid="uid://bpg5qemxpd4u0"
+path="res://.godot/imported/ranged.png-542993b9bd8f12d95c6d7bf938ad2d96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level/background.png"
-dest_files=["res://.godot/imported/background.png-47debb3bfbcb3feff6312c6444b82560.ctex"]
+source_file="res://_Assets/Buildings/Layers/ranged.png"
+dest_files=["res://.godot/imported/ranged.png-542993b9bd8f12d95c6d7bf938ad2d96.ctex"]
 
 [params]
 

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://o8qnh5ouvp0b"]
+
+[ext_resource type="Script" uid="uid://br785vrj80pen" path="res://_Assets/camera_2d.gd" id="1_0hivi"]
+[ext_resource type="Texture2D" uid="uid://w02p4i0in0hp" path="res://_Assets/Level/background.png" id="2_ogrtk"]
+[ext_resource type="PackedScene" uid="uid://cvsov1vpaf34v" path="res://_Assets/Level/floor.tscn" id="3_ho2al"]
+[ext_resource type="PackedScene" uid="uid://wdgwv8do013b" path="res://_Assets/Buildings/Tower.tscn" id="4_i2y2s"]
+[ext_resource type="PackedScene" uid="uid://ckurpwm3vhvvv" path="res://_Assets/Buildings/Goldmine/Goldmine.tscn" id="5_muavb"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 180)
+zoom = Vector2(3, 3)
+script = ExtResource("1_0hivi")
+gameSize = 3.0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 180)
+texture = ExtResource("2_ogrtk")
+
+[node name="Floor" parent="." instance=ExtResource("3_ho2al")]
+position = Vector2(0, 280)
+
+[node name="Tower" parent="." instance=ExtResource("4_i2y2s")]
+position = Vector2(0, 295)
+
+[node name="Goldmine" parent="." instance=ExtResource("5_muavb")]
+position = Vector2(128, 295)
+
+[node name="Goldmine2" parent="." instance=ExtResource("5_muavb")]
+position = Vector2(-128, 295)

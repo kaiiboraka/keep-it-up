@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://ber1yg51m6y7o"]
+[gd_scene load_steps=4 format=3 uid="uid://ber1yg51m6y7o"]
 
-[node name="Unit" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://f4e8pcjkf2ke" path="res://icon.svg" id="1_3rf6a"]
+[ext_resource type="Script" uid="uid://b6ldrf7y7238l" path="res://_Assets/Characters/Unit.cs" id="1_7tayl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tayl"]
+radius = 12.0
+height = 32.0
+
+[node name="Unit" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_7tayl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3rf6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7tayl")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-64, 0)
+collision_mask = 6

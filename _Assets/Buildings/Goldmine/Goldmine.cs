@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Goldmine : RigidBody2D
+public partial class Goldmine : Building
 {
 	Sprite2D sprite;
 	// Called when the node enters the scene tree for the first time.

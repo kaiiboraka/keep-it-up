@@ -3,8 +3,8 @@ using System;
 
 public partial class Building : RigidBody2D
 {
-	int healthCurrent = 100;
-	int healthMax = 100;
+	[Export] int healthCurrent = 100;
+	[Export] int healthMax = 100;
 	int rank = 1;
 	Sprite2D sprite_rank1;
 	Sprite2D sprite_rank2;

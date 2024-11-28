@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1pafvb6n8604"]
 
-[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/Layers/building.tscn" id="1_bql20"]
+[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/TowerBuildings/building.tscn" id="1_bql20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bql20"]
 size = Vector2(96, 36)

@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2d7u3psl8w1g"]
 
-[ext_resource type="Script" uid="uid://oifbjyaobcdc" path="res://_Assets/Buildings/Layers/Building.cs" id="1_27t0t"]
-[ext_resource type="Texture2D" uid="uid://bu7qjneeusdn0" path="res://_Assets/Buildings/Layers/barracks.png" id="1_58yak"]
+[ext_resource type="Script" uid="uid://oifbjyaobcdc" path="res://_Assets/Buildings/TowerBuildings/Building.cs" id="1_27t0t"]
+[ext_resource type="Texture2D" uid="uid://bu7qjneeusdn0" path="res://_Assets/Buildings/TowerBuildings/barracks.png" id="1_58yak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6qc"]
 size = Vector2(96, 36)
 
 [node name="Building" type="RigidBody2D"]
+collision_layer = 2
 script = ExtResource("1_27t0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -7,6 +7,7 @@
 size = Vector2(48, 31)
 
 [node name="Goldmine" type="RigidBody2D"]
+collision_layer = 2
 script = ExtResource("1_jinls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keep It Up", "Keep It Up.csproj", "{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A233D8AD-0CEF-4535-B820-3F94D3FDC30D}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

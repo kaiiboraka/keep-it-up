@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Remote Host (3d99df93-8d97-4986-bc27-ba74a7891dc0)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/doc/example.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/Dock.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/Current.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/Pattern.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/Project.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/todo_class.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/ColourPicker.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/Todo_Manager/todoItem_class.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/config/config.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/config/result_codes.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/config/config_dialog.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/config/wizard_config.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/export/metadata_export_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/aseprite/aseprite.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/aseprite/file_exporter.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/sprite_frames/sprite_frames_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/static_texture/texture_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/animation_player/animation_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/animation_player/sprite_animation_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/animation_player/texture_rect_animation_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/creators/base_sprite_resource_creator.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/importers/file_system_helper.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/importers/noop_import_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/importers/sprite_frames_import_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/importers/static_texture_import_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/importers/tileset_texture_import_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/sprite/inspector_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/sprite/sprite_inspector_dock.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/details.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/import_date.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/source_path.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/wizard_nodes/list_actions.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/as_wizard_window.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/wizard_import_helper.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/imported_sprite_frames.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/as_wizard_dock_container.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/resource_tree_single_item.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/resource_tree_multiple_items.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/wizard/sprite_frames_import_history.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/dock_fields.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/animated_sprite/inspector_plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/animated_sprite/animated_sprite_inspector_dock.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/layer_select_field.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/base_inspector_dock.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/docks/multi_layer_select_field.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/tree/resource_tree.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/tree/inline_warning_panel.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/tree/tree_selection_confirmation_warning.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/dir_drop_button.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/source_drop_button.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/shared/animation_player_drop_button.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/import_helper.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/import_panels.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/tree_filter_field.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/dock_imports_panel.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/aseprite_imports_manager.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/tree_selection_single_item.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/interface/imports_manager/tree_selection_multiple_items.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/AsepriteWizard/plugin.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/DragNDropNodes/class_tree.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/addons/DragNDropNodes/plugin_script.gd" web="/" />
+            <mapping local="$PROJECT_DIR$/camera_2d.gd" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

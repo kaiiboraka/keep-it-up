@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2d7u3psl8w1g"]
+
+[ext_resource type="Script" uid="uid://oifbjyaobcdc" path="res://Tower/Building.cs" id="1_27t0t"]
+[ext_resource type="Texture2D" uid="uid://bu7qjneeusdn0" path="res://Tower/barracks.png" id="1_58yak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6qc"]
+size = Vector2(96, 36)
+
+[node name="Building" type="RigidBody2D"]
+script = ExtResource("1_27t0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bn6qc")
+
+[node name="sprite_rank1" type="Sprite2D" parent="."]
+texture = ExtResource("1_58yak")
+
+[node name="sprite_rank2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_58yak")
+
+[node name="sprite_rank3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_58yak")
+
+[node name="sprite_destroyed" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_58yak")
+
+[node name="sprite_construction" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_58yak")

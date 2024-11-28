@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://wdgwv8do013b"]
+
+[ext_resource type="Script" uid="uid://c8fu1ktmfe12m" path="res://Tower/Tower.cs" id="1_7vsah"]
+[ext_resource type="PackedScene" uid="uid://bnfi4sckqopv5" path="res://Tower/building_flying.tscn" id="2_7vsah"]
+[ext_resource type="PackedScene" uid="uid://jmvvrpaxdadr" path="res://Tower/building_magic.tscn" id="3_6qcbo"]
+[ext_resource type="PackedScene" uid="uid://c1pafvb6n8604" path="res://Tower/building_melee.tscn" id="4_vjt4r"]
+[ext_resource type="PackedScene" uid="uid://omjwmd8s0n6g" path="res://Tower/building_ranged.tscn" id="5_fw406"]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_7vsah")
+
+[node name="Building_Flying" parent="." instance=ExtResource("2_7vsah")]
+position = Vector2(0, -126)
+
+[node name="Building_Magic" parent="." instance=ExtResource("3_6qcbo")]
+position = Vector2(0, -90)
+
+[node name="Building_Melee" parent="." instance=ExtResource("4_vjt4r")]
+position = Vector2(0, -18)
+
+[node name="Building_Ranged" parent="." instance=ExtResource("5_fw406")]
+position = Vector2(0, -54)

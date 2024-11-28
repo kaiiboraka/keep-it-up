@@ -45,8 +45,18 @@ public partial class Unit : CharacterBody2D
     {
         var velocity = Velocity;
         velocity.X = currentSpeed * -Scale.Sign().X;
+        if (MotionMode == MotionModeEnum.Grounded)
+        {
+            velocity.Y += 9.8f;
+        }
+        if (IsOnFloor())
+        {
+            velocity.Y = 0;
+        }
+        
         SetVelocity(velocity);
         MoveAndSlide();
+        OnDamage(1);
     }
 
     public virtual void StartAttacking()
@@ -64,6 +74,17 @@ public partial class Unit : CharacterBody2D
                 target.Call("TakeDamage", damage);
             }
         }
+    }
+
+    public virtual void OnDeath()
+    {
+        QueueFree();
+    }
+
+    public virtual void OnDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0) OnDeath();
     }
 
     public void ResetSpeed()

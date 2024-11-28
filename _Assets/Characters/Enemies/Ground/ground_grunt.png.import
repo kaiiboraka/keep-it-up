@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5l0okxx7fcay"
-path="res://.godot/imported/ground_grunt.png-37f57f4020d635726a8f9bca5a7a9a5f.ctex"
+uid="uid://bagk5fv8mwpce"
+path="res://.godot/imported/ground_grunt.png-3543b6d089e9f02ac0fdca8362d7cdd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Characters/Enemies/ground_grunt.png"
-dest_files=["res://.godot/imported/ground_grunt.png-37f57f4020d635726a8f9bca5a7a9a5f.ctex"]
+source_file="res://_Assets/Characters/Enemies/Ground/ground_grunt.png"
+dest_files=["res://.godot/imported/ground_grunt.png-3543b6d089e9f02ac0fdca8362d7cdd8.ctex"]
 
 [params]
 

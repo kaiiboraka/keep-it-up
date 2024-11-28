@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfve0x6sgaq3x"]
+
+[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_dldyq"]
+[ext_resource type="Texture2D" uid="uid://bagk5fv8mwpce" path="res://_Assets/Characters/Enemies/Ground/ground_grunt.png" id="2_njr58"]
+
+[node name="Enemy_Melee" instance=ExtResource("1_dldyq")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_njr58")
+hframes = 7
+
+[node name="AttackHitbox" parent="Area2D" index="0"]
+position = Vector2(-32, -4)

@@ -8,7 +8,52 @@ radius = 12.0
 height = 32.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tayl"]
-size = Vector2(64, 64)
+size = Vector2(64, 40)
+
+[sub_resource type="Animation" id="Animation_dv4oa"]
+resource_name = "Attack"
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/AttackHitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"StartAttacking"
+}, {
+"args": [],
+"method": &"ResetSpeed"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7tayl"]
 resource_name = "Idle"
@@ -67,51 +112,6 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_dv4oa"]
-resource_name = "Attack"
-step = 0.333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/AttackHitbox:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.666667, 1),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"StartAttacking"
-}, {
-"args": [],
-"method": &"ResetSpeed"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j58yb"]
 _data = {
 &"Attack": SubResource("Animation_dv4oa"),
@@ -120,6 +120,7 @@ _data = {
 }
 
 [node name="Unit" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 collision_layer = 8
 collision_mask = 11
 script = ExtResource("1_7tayl")

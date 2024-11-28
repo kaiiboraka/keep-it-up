@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgeycjfau2712"]
+[gd_scene load_steps=4 format=3 uid="uid://cgeycjfau2712"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_k48tl"]
+[ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Enemies/Flying/EnemyFlying.cs" id="2_p1uyt"]
+[ext_resource type="PackedScene" uid="uid://dfve0x6sgaq3x" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="3_2sbve"]
 
-[node name="Unit" instance=ExtResource("1_k48tl")]
-scale = Vector2(0.5, 0.5)
-currentSpeed = 20
-maxSpeed = 20
+[node name="Enemy_Flying" instance=ExtResource("1_k48tl")]
+motion_mode = 1
+script = ExtResource("2_p1uyt")
+SceneToSpawn = ExtResource("3_2sbve")

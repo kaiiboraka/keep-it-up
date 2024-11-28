@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgeycjfau2712"]
+
+[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_k48tl"]
+
+[node name="Unit" instance=ExtResource("1_k48tl")]
+scale = Vector2(0.5, 0.5)
+currentSpeed = 20
+maxSpeed = 20

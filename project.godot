@@ -21,9 +21,8 @@ animation/layers/only_include_visible_layers_by_default=true
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=320
-window/size/mode=3
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 

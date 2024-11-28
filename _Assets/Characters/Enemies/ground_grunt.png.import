@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtq5rdbiddsam"
-path="res://.godot/imported/flying_grunt.png-f65a5f5386ff16aa3499e06db0680e2f.ctex"
+uid="uid://c5l0okxx7fcay"
+path="res://.godot/imported/ground_grunt.png-37f57f4020d635726a8f9bca5a7a9a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Characters/flying_grunt.png"
-dest_files=["res://.godot/imported/flying_grunt.png-f65a5f5386ff16aa3499e06db0680e2f.ctex"]
+source_file="res://_Assets/Characters/Enemies/ground_grunt.png"
+dest_files=["res://.godot/imported/ground_grunt.png-37f57f4020d635726a8f9bca5a7a9a5f.ctex"]
 
 [params]
 

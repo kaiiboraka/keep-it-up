@@ -39,6 +39,8 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 folder_colors={
 "res://_Assets/Buildings/": "teal",
 "res://_Assets/Characters/": "blue",
+"res://_Assets/Characters/Allies/": "green",
+"res://_Assets/Characters/Enemies/": "red",
 "res://_Assets/Level/": "purple"
 }
 

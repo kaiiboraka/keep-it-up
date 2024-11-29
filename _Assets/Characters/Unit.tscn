@@ -127,7 +127,7 @@ script = ExtResource("1_7tayl")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, -6)
 sprite_frames = ExtResource("2_7tayl")
-animation = &"move"
+animation = &"Attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7tayl")

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c474aumrkemp4"]
+[gd_scene load_steps=4 format=3 uid="uid://c474aumrkemp4"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_dldyq"]
-[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Enemies/Ground/ground_grunt.res" id="2_5h0jc"]
 [ext_resource type="AnimationLibrary" uid="uid://ijvt6nkufghu" path="res://_Assets/Characters/Enemies/Ground/MeleeAnimations.res" id="2_njr58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njr58"]
@@ -11,13 +10,13 @@ size = Vector2(64, 40)
 isHostile = true
 
 [node name="Sprite2D" parent="." index="0"]
-sprite_frames = ExtResource("2_5h0jc")
+animation = &"move"
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": ExtResource("2_njr58")
+}
 
 [node name="AttackHitbox" parent="Area2D" index="0"]
 position = Vector2(-32, -4)
 shape = SubResource("RectangleShape2D_njr58")
-
-[node name="AnimationPlayer" parent="." index="4"]
-libraries = {
-&"": ExtResource("2_njr58")
-}

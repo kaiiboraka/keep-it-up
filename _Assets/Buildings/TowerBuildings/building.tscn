@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2d7u3psl8w1g"]
+[gd_scene load_steps=7 format=3 uid="uid://c2d7u3psl8w1g"]
 
 [ext_resource type="Script" uid="uid://oifbjyaobcdc" path="res://_Assets/Buildings/TowerBuildings/Building.cs" id="1_27t0t"]
 [ext_resource type="Texture2D" uid="uid://bu7qjneeusdn0" path="res://_Assets/Buildings/TowerBuildings/barracks.png" id="1_58yak"]
 [ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="3_o42as"]
-[ext_resource type="Texture2D" uid="uid://dbeljak85e474" path="res://_Assets/UI/ui_icons.png" id="4_8p5ho"]
+[ext_resource type="Texture2D" uid="uid://w48fqplrr4p3" path="res://_Assets/UI/AT_SwordIcon.tres" id="4_8p5ho"]
+[ext_resource type="PackedScene" uid="uid://bgd3q4rwy1lxy" path="res://_Assets/Characters/Allies/Ground/ally_melee.tscn" id="4_gr2de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6qc"]
 size = Vector2(96, 36)
 
 [node name="Building" type="RigidBody2D"]
 position = Vector2(0, -36)
-collision_layer = 2
+collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_27t0t")
 
@@ -38,18 +39,56 @@ texture = ExtResource("1_58yak")
 
 [node name="SpawnerRight" parent="." instance=ExtResource("3_o42as")]
 position = Vector2(40, 36)
+SceneToSpawn = ExtResource("4_gr2de")
+SpawnCount = 0
+isHostile = false
 
 [node name="SpawnerLeft" parent="." instance=ExtResource("3_o42as")]
 position = Vector2(-40, 36)
+SceneToSpawn = ExtResource("4_gr2de")
+SpawnCount = 0
+isHostile = false
 
 [node name="BuildingUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -4.0
+offset_bottom = -4.0
 
-[node name="Button" type="Button" parent="BuildingUI"]
+[node name="SpawnRightButton" type="Button" parent="BuildingUI"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 56.0
+offset_right = 96.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
 icon = ExtResource("4_8p5ho")
+alignment = 0
+
+[node name="SpawnRightLabel" type="Label" parent="BuildingUI/SpawnRightButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -23.0
+offset_right = 40.0
+text = "50g"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnLeftButton" type="Button" parent="BuildingUI"]
+layout_mode = 0
+offset_left = -96.0
+offset_right = -56.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+icon = ExtResource("4_8p5ho")
+
+[node name="SpawnLeftLabel" type="Label" parent="BuildingUI/SpawnLeftButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -23.0
+offset_right = 40.0
+text = "50g"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BuildingUI/SpawnRightButton" to="SpawnerRight" method="SpawnScene"]
+[connection signal="pressed" from="BuildingUI/SpawnLeftButton" to="SpawnerLeft" method="SpawnScene"]

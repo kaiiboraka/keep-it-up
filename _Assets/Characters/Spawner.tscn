@@ -8,3 +8,7 @@ script = ExtResource("1_xcpvt")
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true

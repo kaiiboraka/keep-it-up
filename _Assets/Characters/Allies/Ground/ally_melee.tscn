@@ -8,11 +8,11 @@ size = Vector2(64, 40)
 
 [node name="Enemy_Melee" instance=ExtResource("1_yq35q")]
 
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"MeleeAnimations": ExtResource("2_js3x7")
+}
+
 [node name="AttackHitbox" parent="Area2D" index="0"]
 position = Vector2(-32, -4)
 shape = SubResource("RectangleShape2D_njr58")
-
-[node name="AnimationPlayer" parent="." index="4"]
-libraries = {
-&"": ExtResource("2_js3x7")
-}

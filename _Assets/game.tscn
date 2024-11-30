@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://o8qnh5ouvp0b"]
+[gd_scene load_steps=11 format=3 uid="uid://o8qnh5ouvp0b"]
 
 [ext_resource type="Script" uid="uid://br785vrj80pen" path="res://_Assets/camera_2d.gd" id="1_0hivi"]
 [ext_resource type="Script" uid="uid://bvp7pqh7kddjl" path="res://_Assets/game.gd" id="1_njsul"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="7_w0ekb"]
 [ext_resource type="PackedScene" uid="uid://cgeycjfau2712" path="res://_Assets/Characters/Enemies/Flying/enemy_flying.tscn" id="8_n5ola"]
 [ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="9_vaxwa"]
+[ext_resource type="PackedScene" uid="uid://g77bng7caocf" path="res://_Assets/UI/HUD/hud.tscn" id="10_revmb"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_njsul")
@@ -25,6 +26,7 @@ texture = ExtResource("2_ogrtk")
 position = Vector2(0, 590)
 
 [node name="Tower" parent="." instance=ExtResource("4_i2y2s")]
+unique_name_in_owner = true
 position = Vector2(0, 590)
 
 [node name="Goldmine" parent="." instance=ExtResource("5_muavb")]
@@ -34,17 +36,24 @@ position = Vector2(256, 590)
 position = Vector2(-256, 590)
 
 [node name="FlyingSpawner_Right" parent="." instance=ExtResource("7_w0ekb")]
-position = Vector2(650, 400)
+position = Vector2(705, 400)
 SceneToSpawn = ExtResource("8_n5ola")
 
 [node name="FlyingSpawner_Left" parent="." instance=ExtResource("7_w0ekb")]
-position = Vector2(-650, 400)
+position = Vector2(-705, 400)
 SceneToSpawn = ExtResource("8_n5ola")
+SpawnCount = 1
 
 [node name="GroundSpawner_Right" parent="." instance=ExtResource("7_w0ekb")]
-position = Vector2(650, 580)
+position = Vector2(705, 580)
 SceneToSpawn = ExtResource("9_vaxwa")
 
 [node name="GroundSpawner_Left" parent="." instance=ExtResource("7_w0ekb")]
-position = Vector2(-650, 580)
+position = Vector2(-705, 580)
 SceneToSpawn = ExtResource("9_vaxwa")
+SpawnCount = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugHUD" parent="CanvasLayer" instance=ExtResource("10_revmb")]
+unique_name_in_owner = true

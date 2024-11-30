@@ -1,16 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dyxg1mloo3pbl"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_48ufy"]
-[ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Allies/Flying/AllyFlying.cs" id="2_12wjf"]
+[ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Enemies/Flying/EnemyFlying.cs" id="2_12wjf"]
 [ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="3_2up8b"]
 [ext_resource type="SpriteFrames" uid="uid://drk1g56bkfx30" path="res://_Assets/Characters/Enemies/Flying/flying_grunt.res" id="4_xttlr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0fgx"]
-size = Vector2(64, 64)
-
 [sub_resource type="Animation" id="Animation_w7vuo"]
 resource_name = "Attack"
-length = 0.333342
+length = 0.583342
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,10 +16,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2, 3, 4, 5, 6]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -31,7 +28,7 @@ tracks/1/path = NodePath("Area2D/AttackHitbox:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667),
+"times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -43,7 +40,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.166667, 0.333333),
+"times": PackedFloat32Array(0.25, 0.583333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -64,6 +61,48 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"Attack"]
+}
+
+[sub_resource type="Animation" id="Animation_dw1w1"]
+resource_name = "Move"
+length = 1.00003
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/AttackHitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Move"]
 }
 
 [sub_resource type="Animation" id="Animation_v4y8x"]
@@ -105,54 +144,15 @@ tracks/2/keys = {
 "values": [&"Attack"]
 }
 
-[sub_resource type="Animation" id="Animation_dw1w1"]
-resource_name = "Move"
-length = 0.750013
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/AttackHitbox:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Move"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0g58w"]
 _data = {
 &"Attack": SubResource("Animation_w7vuo"),
 &"Move": SubResource("Animation_dw1w1"),
 &"RESET": SubResource("Animation_v4y8x")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0fgx"]
+size = Vector2(64, 64)
 
 [node name="Ally_Flying" instance=ExtResource("1_48ufy")]
 motion_mode = 1
@@ -162,11 +162,10 @@ SceneToSpawn = ExtResource("3_2up8b")
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = ExtResource("4_xttlr")
 
-[node name="AttackHitbox" parent="Area2D" index="0"]
-shape = SubResource("RectangleShape2D_k0fgx")
-
-[node name="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 &"": SubResource("AnimationLibrary_0g58w")
 }
-autoplay = "Move"
+
+[node name="AttackHitbox" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_k0fgx")

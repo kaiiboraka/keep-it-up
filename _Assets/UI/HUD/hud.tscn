@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://g77bng7caocf"]
+
+[ext_resource type="Script" path="res://_Scripts/HUD.cs" id="1_t7q21"]
+[ext_resource type="PackedScene" uid="uid://te6kw365wgn0" path="res://_Assets/UI/HUD/property_entry.tscn" id="2_bw1w2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uoyte"]
+bg_color = Color(0.172549, 0.172549, 0.172549, 0.560784)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7q21")
+PropertyEntryScene = ExtResource("2_bw1w2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uoyte")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="PropertyList" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="PropertyEntry" parent="MarginContainer/PanelContainer/MarginContainer/PropertyList" instance=ExtResource("2_bw1w2")]
+layout_mode = 2

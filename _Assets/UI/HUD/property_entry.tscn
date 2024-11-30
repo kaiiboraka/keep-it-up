@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://te6kw365wgn0"]
+
+[ext_resource type="Script" path="res://_Scripts/PropertyEntry.cs" id="1_s8dn7"]
+
+[node name="PropertyEntry" type="HBoxContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_s8dn7")
+
+[node name="PropertyLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Property"
+
+[node name="Separator" type="Label" parent="."]
+layout_mode = 2
+text = ":"
+
+[node name="ValueLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"

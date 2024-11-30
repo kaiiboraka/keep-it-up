@@ -1,19 +1,48 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class Goldmine : Building
 {
+	[Export] private float incomeDelay = 3f;
+	[Export] private int goldPerInterval = 10;
 	Sprite2D sprite;
+	Timer incomeTimer;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		sprite.FlipH = GetGlobalPosition().X < 0;
+		incomeTimer = GetNode<Timer>("IncomeTimer");
+		incomeTimer.WaitTime = incomeDelay;
+		incomeTimer.Timeout += AddIncome;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 	public override void _Process(double delta)
 	{
-		
+		UpdateHUDValues();
+	}
+
+	public void AddIncome()
+	{
+		Tower.Instance.Gold += goldPerInterval;
+	}
+
+	protected override void UpdateHUDValues()
+	{
+		Debug.Assert(DebugHUD != null, "HUD cannot be null - inspector");
+
+		DebugHUD.UpdateProperty("Name", Name);
+		DebugHUD.UpdateProperty("Current Rank", rankCurrent.ToString());
+		DebugHUD.UpdateProperty("~~~~~", "~~~~~~~~~~");
+		//
+		//
+		//
+		// DebugHUD.UpdateProperty("CrouchToggled", CrouchToggled);
+		//
+		// DebugHUD.UpdateProperty("~~~~~~~", "~~~~~~~~~~");
+		//
+		// DebugHUD.UpdateProperty("Animation", spriteAnimator.animator.CurrentAnimation);
 	}
 }

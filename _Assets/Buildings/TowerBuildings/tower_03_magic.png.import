@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu7qjneeusdn0"
-path="res://.godot/imported/barracks.png-7f5202c47a4a312a9f446c54ed63efd2.ctex"
+uid="uid://bes8ks556e30j"
+path="res://.godot/imported/tower_03_magic.png-89619363f1e01f90c1338556ddd8038b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Buildings/TowerBuildings/barracks.png"
-dest_files=["res://.godot/imported/barracks.png-7f5202c47a4a312a9f446c54ed63efd2.ctex"]
+source_file="res://_Assets/Buildings/TowerBuildings/tower_03_magic.png"
+dest_files=["res://.godot/imported/tower_03_magic.png-89619363f1e01f90c1338556ddd8038b.ctex"]
 
 [params]
 

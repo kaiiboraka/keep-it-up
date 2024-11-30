@@ -2,14 +2,14 @@ using Godot;
 using System.Diagnostics;
 using Godot.Collections;
 
-public partial class HUD : Control
+public partial class DebugHUD : Control
 {
 	private Vector2 game_size = new Vector2(
 		(float)ProjectSettings.GetSetting("display/window/size/width"),
 		(float)ProjectSettings.GetSetting("display/window/size/height")
 	);
     
-	[Export] private PackedScene? PropertyEntryScene;
+	[Export] private PackedScene PropertyEntryScene;
 	private Dictionary<string, string> HUDProperties = new();
 	private Array<PropertyEntry> entries = new();
 
@@ -44,7 +44,7 @@ public partial class HUD : Control
 			
 			propertyEntry.PropertyText = label;
 			propertyEntry.ValueText = value;
-
+			
 			PropertyChanged += propertyEntry.UpdateValueText;
 			entries.Add(propertyEntry);
 		}

@@ -1,9 +1,109 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgeycjfau2712"]
+[gd_scene load_steps=21 format=3 uid="uid://cgeycjfau2712"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_k48tl"]
 [ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Enemies/Flying/EnemyFlying.cs" id="2_p1uyt"]
 [ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="3_2sbve"]
-[ext_resource type="SpriteFrames" uid="uid://drk1g56bkfx30" path="res://_Assets/Characters/Enemies/Flying/flying_grunt.res" id="4_k0fgx"]
+[ext_resource type="Texture2D" uid="uid://dtq5rdbiddsam" path="res://_Assets/Characters/Enemies/Flying/flying_grunt.png" id="4_k00ai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5pps"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(204, 0, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hil0y"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(0, 58, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vph7g"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(68, 58, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky0sh"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(136, 58, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac180"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(204, 58, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r84l"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(0, 116, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lictd"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(68, 116, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw7hl"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(0, 0, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5suuw"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(136, 0, 68, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0g3n"]
+atlas = ExtResource("4_k00ai")
+region = Rect2(68, 0, 68, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emmco"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5pps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hil0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vph7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky0sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac180")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r84l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lictd")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw7hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5suuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw7hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0g3n")
+}],
+"loop": true,
+"name": &"move",
+"speed": 4.0
+}]
+metadata/_aseprite_wizard_source_file_hash_ = "6bffcaa2207c998ce2d9cae835d16f8d"
+metadata/_aseprite_wizard_config_ = {
+"fields": {
+"do_not_create_resource": false,
+"layer_exclusion_pattern": "",
+"only_visible_layers": true,
+"output_location": "res://_Assets/Characters/Enemies/Flying",
+"output_name": "",
+"should_round_fps": true,
+"source_file": "res://_Assets/Characters/flying_grunt.aseprite",
+"split_layers": false
+},
+"group": ""
+}
 
 [sub_resource type="Animation" id="Animation_v4y8x"]
 length = 0.001
@@ -161,7 +261,7 @@ SceneToSpawn = ExtResource("3_2sbve")
 isHostile = true
 
 [node name="Sprite2D" parent="." index="0"]
-sprite_frames = ExtResource("4_k0fgx")
+sprite_frames = SubResource("SpriteFrames_emmco")
 animation = &"Attack"
 
 [node name="AnimationPlayer" parent="." index="1"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwkgqnh83mde4"
-path="res://.godot/imported/goldmine.png-991df1b6678fe572ba16df276bafac24.ctex"
+uid="uid://cj2dtejpomvdr"
+path="res://.godot/imported/tower_01_barracks.png-1d35c62ae0feaa000fc9fab638052849.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Buildings/goldmine.png"
-dest_files=["res://.godot/imported/goldmine.png-991df1b6678fe572ba16df276bafac24.ctex"]
+source_file="res://_Assets/Buildings/TowerBuildings/tower_01_barracks.png"
+dest_files=["res://.godot/imported/tower_01_barracks.png-1d35c62ae0feaa000fc9fab638052849.ctex"]
 
 [params]
 

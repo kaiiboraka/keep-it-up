@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpg5qemxpd4u0"
-path="res://.godot/imported/ranged.png-6ce1c83a1a5788e99db9a71c3ac60eb6.ctex"
+uid="uid://cd18j8p556axq"
+path="res://.godot/imported/tower_04_roost.png-fc48f4dcec21c4a7c337d472b34d9b37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Buildings/TowerBuildings/ranged.png"
-dest_files=["res://.godot/imported/ranged.png-6ce1c83a1a5788e99db9a71c3ac60eb6.ctex"]
+source_file="res://_Assets/Buildings/TowerBuildings/tower_04_roost.png"
+dest_files=["res://.godot/imported/tower_04_roost.png-fc48f4dcec21c4a7c337d472b34d9b37.ctex"]
 
 [params]
 

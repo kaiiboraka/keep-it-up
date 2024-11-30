@@ -1,18 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgd3q4rwy1lxy"]
+[gd_scene load_steps=2 format=3 uid="uid://vd7a538gvk7f"]
 
-[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_yq35q"]
-[ext_resource type="AnimationLibrary" uid="uid://ijvt6nkufghu" path="res://_Assets/Characters/Enemies/Ground/MeleeAnimations.res" id="2_js3x7"]
+[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="1_et8sr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_njr58"]
-size = Vector2(64, 40)
-
-[node name="Enemy_Melee" instance=ExtResource("1_yq35q")]
-
-[node name="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"MeleeAnimations": ExtResource("2_js3x7")
-}
-
-[node name="AttackHitbox" parent="Area2D" index="0"]
-position = Vector2(-32, -4)
-shape = SubResource("RectangleShape2D_njr58")
+[node name="Ally_Melee" instance=ExtResource("1_et8sr")]

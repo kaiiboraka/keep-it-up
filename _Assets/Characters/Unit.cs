@@ -3,17 +3,17 @@ using System;
 
 public partial class Unit : CharacterBody2D
 {
-    [Export] int healthCurrent = 100;
-    [Export] int healthMax = 100;
-    [Export] int speedMax = 10;
-    [Export] int damage = 10;
-    [Export] float attackDelay = 2f;
+    [Export] protected int healthCurrent = 100;
+    [Export] protected int healthMax = 100;
+    [Export] protected int speedMax = 10;
+    [Export] protected int damage = 10;
+    [Export] protected float attackDelay = 2f;
 
-    RayCast2D lookahead;
-    AnimationPlayer animationPlayer;
-    Area2D attackHitbox;
-    Timer attackTimer;
-    int speedCurrent;
+    protected RayCast2D lookahead;
+    protected AnimationPlayer animationPlayer;
+    protected Area2D attackHitbox;
+    protected Timer attackTimer;
+    protected int speedCurrent;
 
     [Export] public bool isHostile = false;
 

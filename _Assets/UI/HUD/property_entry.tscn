@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://te6kw365wgn0"]
 
-[ext_resource type="Script" path="res://_Scripts/PropertyEntry.cs" id="1_s8dn7"]
+[ext_resource type="Script" uid="uid://7agecxlptrke" path="res://_Scripts/PropertyEntry.cs" id="1_s8dn7"]
 
 [node name="PropertyEntry" type="HBoxContainer"]
 size_flags_horizontal = 0

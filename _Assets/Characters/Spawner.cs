@@ -28,7 +28,7 @@ public partial class Spawner : Node2D
         SpawnScene(SceneToSpawn);
     }
 
-    private void SpawnScene(PackedScene scene)
+    public void SpawnScene(PackedScene scene)
     {
         if (scene == null) return;
         if (SpawnCount == 0) return;

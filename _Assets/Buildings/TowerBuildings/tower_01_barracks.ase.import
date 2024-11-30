@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://gl48tuy3d7v5"
+path="res://.godot/imported/tower_01_barracks.ase-bda46cc9697eeddcb1c78f7069ba586a.res"
+
+[deps]
+
+source_file="res://_Assets/Buildings/TowerBuildings/tower_01_barracks.ase"
+dest_files=["res://.godot/imported/tower_01_barracks.ase-bda46cc9697eeddcb1c78f7069ba586a.res"]
+
+[params]
+

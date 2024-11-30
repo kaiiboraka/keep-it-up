@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnfi4sckqopv5"]
 
-[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/TowerBuildings/building.tscn" id="1_in1lu"]
-[ext_resource type="Texture2D" uid="uid://gk36bmyquu56" path="res://_Assets/Buildings/TowerBuildings/roost.png" id="2_ivn3q"]
+[ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/building.tscn" id="1_in1lu"]
+[ext_resource type="SpriteFrames" uid="uid://bv0bxhmdtye7w" path="res://_Assets/Buildings/TowerBuildings/tower_04_roost.res" id="2_ayuri"]
 [ext_resource type="Texture2D" uid="uid://bs1ey2eo26805" path="res://_Assets/UI/AT_GryphonIcon.tres" id="3_ayuri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yv4m"]
@@ -14,21 +14,21 @@ UnitCost = 200
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_1yv4m")
 
-[node name="sprite_rank1" parent="." index="1"]
-texture = ExtResource("2_ivn3q")
+[node name="BuildingSprite" parent="." index="1"]
+sprite_frames = ExtResource("2_ayuri")
 
-[node name="SpawnerRight" parent="." index="6"]
+[node name="SpawnerRight" parent="." index="2"]
 position = Vector2(28, 27)
 
-[node name="SpawnerLeft" parent="." index="7"]
+[node name="SpawnerLeft" parent="." index="3"]
 position = Vector2(-28, 27)
 
-[node name="BuildingUI" parent="." index="8"]
+[node name="BuildingUI" parent="." index="4"]
 offset_top = -13.0
 offset_bottom = -13.0
 
-[node name="SpawnRightButton" parent="BuildingUI" index="0"]
+[node name="SpawnRightButton" parent="BuildingUI" index="1"]
 icon = ExtResource("3_ayuri")
 
-[node name="SpawnLeftButton" parent="BuildingUI" index="1"]
+[node name="SpawnLeftButton" parent="BuildingUI" index="2"]
 icon = ExtResource("3_ayuri")

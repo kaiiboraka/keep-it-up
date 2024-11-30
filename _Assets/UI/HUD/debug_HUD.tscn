@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://g77bng7caocf"]
 
-[ext_resource type="Script" path="res://_Scripts/HUD.cs" id="1_t7q21"]
+[ext_resource type="Script" uid="uid://bilv0jwe1bayq" path="res://_Scripts/DebugHUD.cs" id="1_t7q21"]
 [ext_resource type="PackedScene" uid="uid://te6kw365wgn0" path="res://_Assets/UI/HUD/property_entry.tscn" id="2_bw1w2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uoyte"]
@@ -10,7 +10,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="HUD" type="Control"]
+[node name="DebugHUD" type="Control"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15

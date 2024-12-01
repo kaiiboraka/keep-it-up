@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_48ufy"]
 [ext_resource type="Script" uid="uid://e3fo57iqy5ys" path="res://_Assets/Characters/Enemies/Flying/EnemyFlying.cs" id="2_12wjf"]
-[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="3_2up8b"]
+[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Melee/enemy_melee.tscn" id="3_2up8b"]
 [ext_resource type="SpriteFrames" uid="uid://drk1g56bkfx30" path="res://_Assets/Characters/Enemies/Flying/flying_grunt.res" id="4_xttlr"]
 
 [sub_resource type="Animation" id="Animation_v4y8x"]

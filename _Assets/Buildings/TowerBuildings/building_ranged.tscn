@@ -11,11 +11,11 @@ size = Vector2(160, 66)
 position = Vector2(0, -33)
 UnitCost = 75
 
-[node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("RectangleShape2D_pfd05")
-
-[node name="BuildingSprite" parent="." index="1"]
+[node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_j2yjx")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_pfd05")
 
 [node name="SpawnerRight" parent="." index="2"]
 position = Vector2(36, 33)
@@ -31,14 +31,8 @@ offset_bottom = 37.0
 offset_top = -36.0
 offset_bottom = 4.0
 
-[node name="SpawnRightButton" parent="BuildingUI" index="2"]
+[node name="RightSpawnButton" parent="BuildingUI" index="2"]
 icon = ExtResource("3_j2yjx")
 
-[node name="SpawnRightLabel" parent="BuildingUI/SpawnRightButton" index="0"]
-text = "75g"
-
-[node name="SpawnLeftButton" parent="BuildingUI" index="3"]
+[node name="LeftSpawnButton" parent="BuildingUI" index="3"]
 icon = ExtResource("3_j2yjx")
-
-[node name="SpawnLeftLabel" parent="BuildingUI/SpawnLeftButton" index="0"]
-text = "75g"

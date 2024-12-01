@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://vd7a538gvk7f"]
 
-[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Ground/enemy_melee.tscn" id="1_et8sr"]
+[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Melee/enemy_melee.tscn" id="1_et8sr"]
 
 [node name="Ally_Melee" instance=ExtResource("1_et8sr")]

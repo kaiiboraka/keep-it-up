@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ber1yg51m6y7o"]
 
 [ext_resource type="Script" uid="uid://b6ldrf7y7238l" path="res://_Assets/Characters/Unit.cs" id="1_7tayl"]
-[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Enemies/Ground/ground_grunt.res" id="2_7tayl"]
+[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Enemies/Melee/melee_grunt.res" id="2_7tayl"]
 
 [sub_resource type="Animation" id="Animation_celaq"]
 length = 0.001

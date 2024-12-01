@@ -6,13 +6,13 @@ public partial class Goldmine : Building
 {
 	[Export] private float incomeDelay = 3f;
 	[Export] private int goldPerInterval = 10;
-	Sprite2D sprite;
 	Timer incomeTimer;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		sprite = GetNode<Sprite2D>("Sprite2D");
+		base._Ready();
+		
 		sprite.FlipH = GetGlobalPosition().X < 0;
 		incomeTimer = GetNode<Timer>("IncomeTimer");
 		incomeTimer.WaitTime = incomeDelay;

@@ -1,13 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2d7u3psl8w1g"]
+[gd_scene load_steps=15 format=3 uid="uid://c2d7u3psl8w1g"]
 
 [ext_resource type="Script" uid="uid://cy0q8nakaw5df" path="res://_Assets/Buildings/SpawningBuilding.cs" id="1_iy3oh"]
 [ext_resource type="SpriteFrames" uid="uid://c3dw6ej7h8hdh" path="res://_Assets/Buildings/TowerBuildings/tower_01_barracks.res" id="2_iy3oh"]
-[ext_resource type="Texture2D" uid="uid://bymntdx63w0pe" path="res://_Assets/UI/AT_3Bars_1.tres" id="3_egp7r"]
+[ext_resource type="Texture2D" uid="uid://os1qv816g44j" path="res://_Assets/UI/ui_bars.png" id="2_ut0ym"]
 [ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="3_u5e5e"]
-[ext_resource type="Texture2D" uid="uid://biocv8rqysb86" path="res://_Assets/UI/AT_3Bars_0.tres" id="4_egp7r"]
-[ext_resource type="Texture2D" uid="uid://b4t25gikg4enw" path="res://_Assets/UI/AT_3Bars_2.tres" id="4_ut0ym"]
-[ext_resource type="Texture2D" uid="uid://ce2ri4kyoq1lr" path="res://_Assets/UI/AT_3Bars_3.tres" id="5_ontyv"]
 [ext_resource type="Texture2D" uid="uid://w48fqplrr4p3" path="res://_Assets/UI/AT_SwordIcon.tres" id="5_ut0ym"]
+[ext_resource type="SpriteFrames" uid="uid://bewefmy6xx7n2" path="res://_Assets/UI/ui_icons.res" id="8_ontyv"]
+[ext_resource type="Texture2D" uid="uid://bdek8kmyjl78f" path="res://_Assets/UI/AT_HealthBar_Below.tres" id="9_i2bq0"]
+[ext_resource type="Texture2D" uid="uid://dvwgx61kbmrtv" path="res://_Assets/UI/AT_HealthBar_Above.tres" id="10_3okvn"]
+[ext_resource type="Texture2D" uid="uid://bfacvlsqavtoh" path="res://_Assets/UI/AT_HealthBar_Progress.tres" id="11_su6yq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bq0"]
+atlas = ExtResource("2_ut0ym")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3okvn"]
+atlas = ExtResource("2_ut0ym")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su6yq"]
+atlas = ExtResource("2_ut0ym")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_julx3"]
+atlas = ExtResource("2_ut0ym")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn6qc"]
 size = Vector2(96, 36)
@@ -17,7 +34,7 @@ position = Vector2(0, -36)
 collision_layer = 6
 collision_mask = 3
 script = ExtResource("1_iy3oh")
-upgradeIconSprites = Array[Texture2D]([ExtResource("4_egp7r"), ExtResource("3_egp7r"), ExtResource("4_ut0ym"), ExtResource("5_ontyv")])
+upgradeIconSprites = [SubResource("AtlasTexture_i2bq0"), SubResource("AtlasTexture_3okvn"), SubResource("AtlasTexture_su6yq"), SubResource("AtlasTexture_julx3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bn6qc")
@@ -42,7 +59,18 @@ layout_mode = 3
 anchors_preset = 0
 offset_top = -4.0
 offset_bottom = -4.0
-mouse_filter = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="BuildingUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+mouse_filter = 2
+rounded = true
+texture_under = ExtResource("9_i2bq0")
+texture_over = ExtResource("10_3okvn")
+texture_progress = ExtResource("11_su6yq")
 
 [node name="UpgradeButton" type="Button" parent="BuildingUI"]
 layout_mode = 0
@@ -50,17 +78,23 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
-icon = ExtResource("4_egp7r")
 alignment = 0
 
-[node name="UpgradeButtonLabel" type="Label" parent="BuildingUI/UpgradeButton"]
+[node name="UpgradeCostLabel" type="Label" parent="BuildingUI/UpgradeButton"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = -23.0
 offset_right = 40.0
+mouse_filter = 0
 text = "150 g"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="UpgradeButtonSprite" type="AnimatedSprite2D" parent="BuildingUI/UpgradeButton"]
+unique_name_in_owner = true
+position = Vector2(20, 20)
+sprite_frames = ExtResource("8_ontyv")
+animation = &"3Ranks_0"
 
 [node name="SpawnRightButton" type="Button" parent="BuildingUI"]
 layout_mode = 0
@@ -68,7 +102,6 @@ offset_left = 56.0
 offset_right = 96.0
 offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
-mouse_filter = 1
 icon = ExtResource("5_ut0ym")
 alignment = 0
 
@@ -77,6 +110,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_top = -23.0
 offset_right = 40.0
+mouse_filter = 0
 text = "50 g"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -87,7 +121,6 @@ offset_left = -96.0
 offset_right = -56.0
 offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
-mouse_filter = 1
 icon = ExtResource("5_ut0ym")
 
 [node name="SpawnLeftLabel" type="Label" parent="BuildingUI/SpawnLeftButton"]
@@ -95,6 +128,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_top = -23.0
 offset_right = 40.0
+mouse_filter = 0
 text = "50 g"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -102,5 +136,5 @@ vertical_alignment = 1
 [node name="ConstructionTimer" type="Timer" parent="."]
 
 [connection signal="pressed" from="BuildingUI/UpgradeButton" to="." method="UpgradeTier"]
-[connection signal="pressed" from="BuildingUI/SpawnRightButton" to="SpawnerRight" method="SpawnScene"]
-[connection signal="pressed" from="BuildingUI/SpawnLeftButton" to="SpawnerLeft" method="SpawnScene"]
+[connection signal="pressed" from="BuildingUI/SpawnRightButton" to="." method="SpawnRight"]
+[connection signal="pressed" from="BuildingUI/SpawnLeftButton" to="." method="SpawnLeft"]

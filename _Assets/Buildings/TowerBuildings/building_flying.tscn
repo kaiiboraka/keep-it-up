@@ -27,8 +27,12 @@ position = Vector2(-28, 27)
 offset_top = -13.0
 offset_bottom = -13.0
 
-[node name="SpawnRightButton" parent="BuildingUI" index="1"]
+[node name="HealthBar" parent="BuildingUI" index="0"]
+offset_top = -24.0
+offset_bottom = 16.0
+
+[node name="SpawnRightButton" parent="BuildingUI" index="2"]
 icon = ExtResource("3_ayuri")
 
-[node name="SpawnLeftButton" parent="BuildingUI" index="2"]
+[node name="SpawnLeftButton" parent="BuildingUI" index="3"]
 icon = ExtResource("3_ayuri")

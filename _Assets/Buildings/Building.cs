@@ -17,10 +17,12 @@ public partial class Building : RigidBody2D
 	protected int upgradeCost = 100;
 	
 	[ExportCategory("Components")]
-	[Export] protected Array<Texture2D> upgradeIconSprites;
+	[Export] protected Array<Texture2D> upgradeIconSprites = new();
 	protected AnimatedSprite2D sprite;
+	protected TextureProgressBar healthBar;
 	protected Button upgradeButton;
 	protected Label upgradeCostLabel;
+	protected AnimatedSprite2D upgradeButtonSprite;
 	protected Timer constructionTimer;
 	[Export] protected DebugHUD DebugHUD;
 	
@@ -28,10 +30,16 @@ public partial class Building : RigidBody2D
 	public override void _Ready()
 	{
 		sprite = GetNode<AnimatedSprite2D>("BuildingSprite");
-		upgradeCostLabel = GetNode<Label>("%UpgradeButtonLabel");
+		healthBar = GetNode<TextureProgressBar>("%HealthBar");
+		upgradeButton = GetNode<Button>("BuildingUI/UpgradeButton");
+		upgradeCostLabel = GetNode<Label>("%UpgradeCostLabel");
+		upgradeButtonSprite = GetNode<AnimatedSprite2D>("%UpgradeButtonSprite");
 		constructionTimer = GetNode<Timer>("ConstructionTimer");
 		constructionTimer.WaitTime = baseConstructionTime;
 		constructionTimer.OneShot = true;
+		
+		healthBar.MaxValue = healthMax;
+		healthBar.Value = healthCurrent;
 		
 		UpdateUpgradeCost();
 	}
@@ -39,6 +47,7 @@ public partial class Building : RigidBody2D
 
 	public override void _Process(double delta)
 	{
+		healthBar.Value = healthCurrent;
 		UpdateHUDValues();
 	}
 
@@ -74,7 +83,7 @@ public partial class Building : RigidBody2D
 		}
 		
 		Tower.Instance.Gold -= upgradeCost;
-		rankCurrent++;
+		
 		constructionTimer.Timeout += ChangeTier;
 		constructionTimer.Start();
 		sprite.Play("Construction");
@@ -82,7 +91,8 @@ public partial class Building : RigidBody2D
 
 	public void ChangeTier()
 	{
-		var animationToPlay = rankCurrent switch
+		var nextRank = rankCurrent + 1;
+		var animationToPlay = nextRank switch
 		{
 			0 => "Destroyed",
 			1 => "Rank1",
@@ -93,8 +103,16 @@ public partial class Building : RigidBody2D
 			_ => "Construction",
 		};
 		sprite.Play(animationToPlay);
-		upgradeButton.Icon = upgradeIconSprites[rankCurrent];
+		rankCurrent++;
 		UpdateUpgradeCost();
+		
+		animationToPlay = nextRank switch
+		{
+			0 or 1 or 2 or 3 => rankMax + "Rank_" + nextRank,
+			(4 or 5) when rankMax == 5 => rankMax + "Rank_" + nextRank,
+			_ => rankMax + "Rank_" + 0,
+		};
+		upgradeButtonSprite.Play(animationToPlay);
 	}
 	
 	protected virtual void UpdateHUDValues()

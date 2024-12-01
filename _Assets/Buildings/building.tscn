@@ -36,23 +36,23 @@ collision_mask = 3
 script = ExtResource("1_iy3oh")
 upgradeIconSprites = [SubResource("AtlasTexture_i2bq0"), SubResource("AtlasTexture_3okvn"), SubResource("AtlasTexture_su6yq"), SubResource("AtlasTexture_julx3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bn6qc")
-
 [node name="BuildingSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 1.01771)
 sprite_frames = ExtResource("2_iy3oh")
 animation = &"Rank1"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bn6qc")
+
 [node name="SpawnerRight" parent="." instance=ExtResource("3_u5e5e")]
+unique_name_in_owner = true
 position = Vector2(40, 36)
 SpawnCount = 0
-isHostile = false
 
 [node name="SpawnerLeft" parent="." instance=ExtResource("3_u5e5e")]
+unique_name_in_owner = true
 position = Vector2(-40, 36)
 SpawnCount = 0
-isHostile = false
 
 [node name="BuildingUI" type="Control" parent="."]
 layout_mode = 3
@@ -73,6 +73,7 @@ texture_over = ExtResource("10_3okvn")
 texture_progress = ExtResource("11_su6yq")
 
 [node name="UpgradeButton" type="Button" parent="BuildingUI"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -20.0
 offset_right = 20.0
@@ -96,7 +97,8 @@ position = Vector2(20, 20)
 sprite_frames = ExtResource("8_ontyv")
 animation = &"3Ranks_0"
 
-[node name="SpawnRightButton" type="Button" parent="BuildingUI"]
+[node name="RightSpawnButton" type="Button" parent="BuildingUI"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 56.0
 offset_right = 96.0
@@ -105,7 +107,7 @@ pivot_offset = Vector2(20, 20)
 icon = ExtResource("5_ut0ym")
 alignment = 0
 
-[node name="SpawnRightLabel" type="Label" parent="BuildingUI/SpawnRightButton"]
+[node name="SpawnRightLabel" type="Label" parent="BuildingUI/RightSpawnButton"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = -23.0
@@ -115,7 +117,8 @@ text = "50 g"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpawnLeftButton" type="Button" parent="BuildingUI"]
+[node name="LeftSpawnButton" type="Button" parent="BuildingUI"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -96.0
 offset_right = -56.0
@@ -123,7 +126,7 @@ offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
 icon = ExtResource("5_ut0ym")
 
-[node name="SpawnLeftLabel" type="Label" parent="BuildingUI/SpawnLeftButton"]
+[node name="SpawnLeftLabel" type="Label" parent="BuildingUI/LeftSpawnButton"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = -23.0
@@ -136,5 +139,5 @@ vertical_alignment = 1
 [node name="ConstructionTimer" type="Timer" parent="."]
 
 [connection signal="pressed" from="BuildingUI/UpgradeButton" to="." method="UpgradeTier"]
-[connection signal="pressed" from="BuildingUI/SpawnRightButton" to="." method="SpawnRight"]
-[connection signal="pressed" from="BuildingUI/SpawnLeftButton" to="." method="SpawnLeft"]
+[connection signal="pressed" from="BuildingUI/RightSpawnButton" to="." method="SpawnRight"]
+[connection signal="pressed" from="BuildingUI/LeftSpawnButton" to="." method="SpawnLeft"]

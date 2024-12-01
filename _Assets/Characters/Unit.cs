@@ -80,6 +80,19 @@ public partial class Unit : CharacterBody2D
             if (target.HasMethod("TakeDamage"))
             {
                 target.Call("TakeDamage", damage);
+                continue;
+            }
+
+            if (target is Building building)
+            {
+                building.TakeDamage(damage);
+                continue;
+            }
+
+            if (target is Unit { isHostile: false } unit)
+            {
+                unit.TakeDamage(damage);
+                continue;
             }
         }
     }

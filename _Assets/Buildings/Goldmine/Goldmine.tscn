@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfacvlsqavtoh" path="res://_Assets/UI/AT_HealthBar_Progress.tres" id="6_f7s7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gqwu"]
-size = Vector2(48, 31)
+size = Vector2(80, 54)
 
 [node name="Goldmine" type="RigidBody2D"]
 collision_layer = 4
@@ -22,11 +22,12 @@ sprite_frames = ExtResource("2_e6eue")
 animation = &"Rank1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15.5)
+position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_7gqwu")
 
 [node name="IncomeTimer" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
 
 [node name="ConstructionTimer" type="Timer" parent="."]
 one_shot = true
@@ -39,6 +40,7 @@ offset_bottom = -4.0
 mouse_filter = 2
 
 [node name="UpgradeButton" type="Button" parent="BuildingUI"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -20.0
 offset_top = -120.0

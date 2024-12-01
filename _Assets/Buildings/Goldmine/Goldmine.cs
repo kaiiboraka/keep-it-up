@@ -15,6 +15,7 @@ public partial class Goldmine : Building
 		
 		sprite.FlipH = GetGlobalPosition().X < 0;
 		incomeTimer = GetNode<Timer>("IncomeTimer");
+		incomeTimer.Autostart = true;
 		incomeTimer.WaitTime = incomeDelay;
 		incomeTimer.Timeout += AddIncome;
 	}
@@ -26,7 +27,7 @@ public partial class Goldmine : Building
 
 	public void AddIncome()
 	{
-		Tower.Instance.Gold += goldPerInterval;
+		Tower.Instance.Gold += (goldPerInterval * rankCurrent);
 	}
 
 	protected override void UpdateHUDValues()

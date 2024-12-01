@@ -7,7 +7,6 @@ public partial class Spawner : Node2D
     [Export] public int SpawnCount = 2;
     [Export] public float SpawnTime = 5;
     [Export] private float spawnDelay = .33f;
-    [Export] public bool isHostile = true;
 
     private Timer spawnTimer;
     private Timer delayTimer;
@@ -25,25 +24,25 @@ public partial class Spawner : Node2D
 
     private void SpawnScene()
     {
-        SpawnScene(SceneToSpawn);
+        SpawnScene(SceneToSpawn, true);
     }
 
-    public void SpawnScene(PackedScene scene)
+    public void SpawnScene(PackedScene scene, bool isHostile = true)
     {
         if (scene == null) return;
         if (SpawnCount == 0) return;
 
         if (SpawnCount == 1)
         {
-            InstantiateScene(scene);
+            InstantiateScene(scene, isHostile);
         }
         else
         {
-            InstantiateScenes(scene);
+            InstantiateScenes(scene, isHostile);
         }
     }
 
-    private void InstantiateScene(PackedScene scene)
+    private void InstantiateScene(PackedScene scene, bool isHostile = true)
     {
         Node instance = scene.Instantiate();
         if (instance is Unit unit)
@@ -54,7 +53,7 @@ public partial class Spawner : Node2D
         AddChild(instance);
     }
 
-    private async void InstantiateScenes(PackedScene scene)
+    private async void InstantiateScenes(PackedScene scene, bool isHostile = true)
     {
         delayTimer.Start();
         for (int i = 0; i < SpawnCount; i++)

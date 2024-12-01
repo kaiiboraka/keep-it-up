@@ -6,6 +6,8 @@ public partial class SpawningBuilding : Building
 
     [Export] public PackedScene UnitToSpawn;
     
+    private Button rightSpawnButton;
+    private Button leftSpawnButton;
     private Spawner rightSpawner;
     private Spawner leftSpawner;
     private Label rightSpawnerLabel;
@@ -14,8 +16,14 @@ public partial class SpawningBuilding : Building
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        rightSpawner = GetNode<Spawner>("SpawnerRight");
-        leftSpawner = GetNode<Spawner>("SpawnerLeft");
+        rightSpawnButton = GetNode<Button>("%RightSpawnButton");
+        leftSpawnButton = GetNode<Button>("%LeftSpawnButton");
+
+        rightSpawnButton.Pressed += SpawnRight;
+        leftSpawnButton.Pressed += SpawnLeft;
+        
+        rightSpawner = GetNode<Spawner>("%SpawnerRight");
+        leftSpawner = GetNode<Spawner>("%SpawnerLeft");
 
         rightSpawner.SceneToSpawn = UnitToSpawn;
         leftSpawner.SceneToSpawn = UnitToSpawn;
@@ -48,7 +56,7 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        rightSpawner.SpawnScene(UnitToSpawn);
+        rightSpawner.SpawnScene(UnitToSpawn, false);
     }
 
     public void SpawnLeft()
@@ -61,6 +69,6 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        leftSpawner.SpawnScene(UnitToSpawn);
+        leftSpawner.SpawnScene(UnitToSpawn, false);
     }
 }

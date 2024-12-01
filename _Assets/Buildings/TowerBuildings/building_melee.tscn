@@ -9,5 +9,5 @@ size = Vector2(192, 72)
 [node name="Building_Melee" instance=ExtResource("1_bql20")]
 UnitToSpawn = ExtResource("2_7we5w")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_bql20")

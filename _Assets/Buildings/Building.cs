@@ -17,7 +17,6 @@ public partial class Building : RigidBody2D
 	protected int upgradeCost = 100;
 	
 	[ExportCategory("Components")]
-	[Export] protected Array<Texture2D> upgradeIconSprites = new();
 	protected AnimatedSprite2D sprite;
 	protected TextureProgressBar healthBar;
 	protected Button upgradeButton;

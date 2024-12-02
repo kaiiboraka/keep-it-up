@@ -1,25 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cgeycjfau2712"]
+[gd_scene load_steps=20 format=3 uid="uid://cgeycjfau2712"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_k48tl"]
-[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Melee/melee_enemy.tscn" id="3_2sbve"]
+[ext_resource type="Script" uid="uid://bfhs5yxhb7kji" path="res://_Assets/Characters/Flying/FlyingUnit.cs" id="2_kw3ym"]
 [ext_resource type="Texture2D" uid="uid://dtq5rdbiddsam" path="res://_Assets/Characters/Flying/flying_grunt.png" id="4_k00ai"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_o36r2"]
-script/source = "using Godot;
-using System;
-
-public partial class AllyFlying : Unit
-{
-    [Export] public PackedScene SceneToSpawn;
-    public override void OnDeath()
-    {
-        base.OnDeath();
-        if (SceneToSpawn == null) return;
-        Node instance = SceneToSpawn.Instantiate();
-        AddSibling(instance);
-    }
-}
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5pps"]
 atlas = ExtResource("4_k00ai")
@@ -272,9 +255,9 @@ size = Vector2(64, 64)
 
 [node name="Enemy_Flying" instance=ExtResource("1_k48tl")]
 motion_mode = 1
-script = SubResource("CSharpScript_o36r2")
-SceneToSpawn = ExtResource("3_2sbve")
-isHostile = true
+script = ExtResource("2_kw3ym")
+SceneToSpawn = null
+speedMax = 10
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_emmco")

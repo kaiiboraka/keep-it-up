@@ -23,6 +23,11 @@ public partial class RangedUnit : Unit
 		if (!isAttacking) Move(delta);
 		if (detectionArea.HasOverlappingBodies() && !isAttacking && attackTimer.IsStopped())
 		{
+			var targets = detectionArea.GetOverlappingBodies();
+			foreach (var target in targets)
+			{
+				AimAtTarget(target);
+			}
 			StartAttacking();
 		}
 	}
@@ -30,17 +35,19 @@ public partial class RangedUnit : Unit
 	public void AimAtTarget(Node2D body)
 	{
 		// StartAttacking();
-		var bodyPosition = body.Position;
-		var distanceToBody = bodyPosition.DistanceTo(GlobalPosition);
+		var distanceToBody = body.GlobalPosition.DistanceTo(GlobalPosition);
 		if (distanceToBody < distanceToTarget)
 		{
 			currentTarget = body;
 		}
-		
-		var aimDirection = bodyPosition - GlobalPosition;
+	}
 
-		var h = aimDirection[0];
-		var k = aimDirection[1];
+	private void FireArrow()
+	{
+		var aimDirection = currentTarget.GlobalPosition - GlobalPosition;
+
+		var h = currentTarget.GlobalPosition[0];
+		var k = currentTarget.GlobalPosition[1];
 		var x = GlobalPosition.X;
 		var y = GlobalPosition.Y;
 		var a = (y - k) / Mathf.Pow((x - h), 2);
@@ -48,13 +55,13 @@ public partial class RangedUnit : Unit
 		var b = -s * x + y;
 		var e = s * h + b;
 		
-		Vector2 direction = new Vector2((float)h, e) - GlobalPosition;
+		Vector2 direction = GlobalPosition.DirectionTo(new Vector2(h, e));
 		Node newArrow = arrow.Instantiate();
-		AddSibling(newArrow);
+		AddChild(newArrow);
 		if (newArrow is Arrow arrowInstance)
 		{
-			arrowInstance.Velocity = direction;
+			arrowInstance.Velocity = direction * e;
+			arrowInstance.damage = this.damage;
 		}
 	}
-	
 }

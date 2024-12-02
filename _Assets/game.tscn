@@ -32,25 +32,29 @@ position = Vector2(0, 590)
 DebugHUD = NodePath("../CanvasLayer/DebugHUD")
 
 [node name="Building_Melee" parent="Tower" index="0" node_paths=PackedStringArray("DebugHUD")]
+lock_rotation = false
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Building_Ranged" parent="Tower" index="1" node_paths=PackedStringArray("DebugHUD")]
+lock_rotation = false
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Building_Magic" parent="Tower" index="2" node_paths=PackedStringArray("DebugHUD")]
+lock_rotation = false
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Building_Flying" parent="Tower" index="3" node_paths=PackedStringArray("DebugHUD")]
+lock_rotation = false
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Goldmine_Right" parent="Tower" node_paths=PackedStringArray("DebugHUD") instance=ExtResource("5_muavb")]
-position = Vector2(256, 0)
+position = Vector2(256, -30)
 Name = "TowerBuilding"
 rankMax = 3
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Goldmine_Left" parent="Tower" node_paths=PackedStringArray("DebugHUD") instance=ExtResource("5_muavb")]
-position = Vector2(-256, 0)
+position = Vector2(-256, -30)
 Name = "TowerBuilding"
 rankMax = 3
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")

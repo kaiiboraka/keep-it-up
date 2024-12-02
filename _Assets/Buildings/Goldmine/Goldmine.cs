@@ -19,11 +19,6 @@ public partial class Goldmine : Building
 		incomeTimer.WaitTime = incomeDelay;
 		incomeTimer.Timeout += AddIncome;
 	}
-	
-	public override void _Process(double delta)
-	{
-		UpdateHUDValues();
-	}
 
 	public void AddIncome()
 	{

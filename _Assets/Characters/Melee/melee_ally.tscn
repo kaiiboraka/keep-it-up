@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://kf5ppmsu0twj"]
+[gd_scene load_steps=8 format=3 uid="uid://kf5ppmsu0twj"]
 
 [ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_too75"]
+[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Melee/melee_grunt.res" id="2_elrmh"]
 
 [sub_resource type="Animation" id="Animation_yedx0"]
 length = 0.001
@@ -164,6 +165,7 @@ libraries = {
 }
 
 [node name="Sprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_elrmh")
 animation = &"move"
 
 [node name="AttackHitbox" parent="Area2D" index="0"]

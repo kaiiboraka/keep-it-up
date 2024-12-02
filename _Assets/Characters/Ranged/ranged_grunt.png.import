@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://devou242bbmwa"
-path="res://.godot/imported/ground_grunt.png-73ad9478733d666b2ca39f94e9861eb7.ctex"
+uid="uid://35jp4iahkwf"
+path="res://.godot/imported/ranged_grunt.png-45db60ae4b6febecfe0994a4a2a19deb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Characters/Allies/Ground/ground_grunt.png"
-dest_files=["res://.godot/imported/ground_grunt.png-73ad9478733d666b2ca39f94e9861eb7.ctex"]
+source_file="res://_Assets/Characters/Ranged/ranged_grunt.png"
+dest_files=["res://.godot/imported/ranged_grunt.png-45db60ae4b6febecfe0994a4a2a19deb.ctex"]
 
 [params]
 

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Unit : CharacterBody2D
 {
@@ -17,6 +18,7 @@ public partial class Unit : CharacterBody2D
 
     [Export] public bool isHostile = false;
 
+    HashSet<Node> hitTargets = new();
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -24,6 +26,7 @@ public partial class Unit : CharacterBody2D
         attackHitbox = GetNode<Area2D>("Area2D");
         lookahead = GetNode<RayCast2D>("RayCast2D");
         attackTimer = GetNode<Timer>("AttackDelay");
+        attackTimer.WaitTime = attackDelay;
         
         healthCurrent = healthMax;
         speedCurrent = speedMax;
@@ -71,27 +74,33 @@ public partial class Unit : CharacterBody2D
     {
         animationPlayer.Play("attack");
         speedCurrent = 0;
+        hitTargets = new();
     }
     
     public virtual void Attack()
     {
         foreach(var target in attackHitbox.GetOverlappingBodies())
         {
+            if (hitTargets.Contains(target)) continue;
+            
             if (target.HasMethod("TakeDamage"))
             {
                 target.Call("TakeDamage", damage);
+                hitTargets.Add(target);
                 continue;
             }
 
             if (target is Building building)
             {
                 building.TakeDamage(damage);
+                hitTargets.Add(target);
                 continue;
             }
 
             if (target is Unit { isHostile: false } unit)
             {
                 unit.TakeDamage(damage);
+                hitTargets.Add(target);
                 continue;
             }
         }

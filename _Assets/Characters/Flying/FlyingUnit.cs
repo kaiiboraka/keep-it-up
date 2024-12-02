@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class EnemyFlying : Unit
+public partial class FlyingUnit : Unit
 {
     [Export] public PackedScene SceneToSpawn;
     public override void OnDeath()

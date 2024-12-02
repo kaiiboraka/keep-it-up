@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bagk5fv8mwpce"
-path="res://.godot/imported/melee_grunt.png-e7f8da62846ae791a5a64983a01ac17b.ctex"
+uid="uid://coaumeibhov6n"
+path="res://.godot/imported/arrow_turnaround.png-2699afb81f2f56ebc7174136d16762da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Characters/Enemies/Melee/melee_grunt.png"
-dest_files=["res://.godot/imported/melee_grunt.png-e7f8da62846ae791a5a64983a01ac17b.ctex"]
+source_file="res://_Assets/Characters/Ranged/arrow_turnaround.png"
+dest_files=["res://.godot/imported/arrow_turnaround.png-2699afb81f2f56ebc7174136d16762da.ctex"]
 
 [params]
 

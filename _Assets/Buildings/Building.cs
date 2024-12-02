@@ -54,6 +54,7 @@ public partial class Building : RigidBody2D
 	{
 		GD.Print("Building death");
 		CollisionLayer = CollisionLayer.WithoutLayer(3);
+		QueueFree();
 	}
 
 	public virtual void TakeDamage(int damage)

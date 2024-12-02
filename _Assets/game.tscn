@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://o8qnh5ouvp0b"]
+[gd_scene load_steps=12 format=3 uid="uid://o8qnh5ouvp0b"]
 
 [ext_resource type="Script" uid="uid://br785vrj80pen" path="res://_Assets/camera_2d.gd" id="1_0hivi"]
 [ext_resource type="Script" uid="uid://bvp7pqh7kddjl" path="res://_Assets/game.gd" id="1_njsul"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://wdgwv8do013b" path="res://_Assets/Buildings/Tower.tscn" id="4_i2y2s"]
 [ext_resource type="PackedScene" uid="uid://ckurpwm3vhvvv" path="res://_Assets/Buildings/Goldmine/Goldmine.tscn" id="5_muavb"]
 [ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="7_w0ekb"]
-[ext_resource type="PackedScene" uid="uid://cgeycjfau2712" path="res://_Assets/Characters/Enemies/Flying/enemy_flying.tscn" id="8_n5ola"]
-[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Enemies/Melee/enemy_melee.tscn" id="9_vaxwa"]
+[ext_resource type="PackedScene" uid="uid://cgeycjfau2712" path="res://_Assets/Characters/Flying/flying_enemy.tscn" id="8_n5ola"]
+[ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Melee/melee_enemy.tscn" id="9_vaxwa"]
+[ext_resource type="PackedScene" uid="uid://dnr1r28451i1" path="res://_Assets/Characters/Ranged/ranged_enemy.tscn" id="10_28jjb"]
 [ext_resource type="PackedScene" uid="uid://g77bng7caocf" path="res://_Assets/UI/HUD/debug_HUD.tscn" id="10_revmb"]
 
 [node name="Game" type="Node2D"]
@@ -69,7 +70,7 @@ SceneToSpawn = ExtResource("9_vaxwa")
 
 [node name="GroundSpawner_Left" parent="." instance=ExtResource("7_w0ekb")]
 position = Vector2(-705, 580)
-SceneToSpawn = ExtResource("9_vaxwa")
+SceneToSpawn = ExtResource("10_28jjb")
 SpawnCount = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

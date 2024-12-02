@@ -55,7 +55,7 @@ public partial class Unit : CharacterBody2D
     public virtual void Move(double delta)
     {
         var velocity = Velocity;
-        velocity.X = speedCurrent * -GlobalPosition.Sign().X;
+        velocity.X = speedCurrent * GlobalPosition.Sign().X * (isHostile ? -1 : 1);
         if (MotionMode == MotionModeEnum.Grounded)
         {
             velocity.Y += 9.8f;

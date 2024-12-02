@@ -158,19 +158,21 @@ _data = {
 size = Vector2(64, 64)
 
 [node name="Enemy_Flying" instance=ExtResource("1_k48tl")]
+collision_layer = 520
+collision_mask = 803
 motion_mode = 1
 script = ExtResource("2_kw3ym")
 SceneToSpawn = ExtResource("3_ykt70")
 isHostile = true
 
-[node name="Sprite2D" parent="." index="0"]
-sprite_frames = ExtResource("3_kw3ym")
-animation = &"move"
-
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 &"": SubResource("AnimationLibrary_0g58w")
 }
+
+[node name="Sprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_kw3ym")
+animation = &"move"
 
 [node name="AttackHitbox" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_k0fgx")

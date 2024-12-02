@@ -155,15 +155,17 @@ _data = {
 size = Vector2(64, 40)
 
 [node name="Enemy_Melee" instance=ExtResource("1_68r1b")]
+collision_layer = 520
+collision_mask = 803
 isHostile = true
 
-[node name="Sprite2D" parent="." index="0"]
-animation = &"move"
-
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="0"]
 libraries = {
 &"": SubResource("AnimationLibrary_kalow")
 }
+
+[node name="Sprite2D" parent="." index="1"]
+animation = &"move"
 
 [node name="AttackHitbox" parent="Area2D" index="0"]
 position = Vector2(-32, -4)

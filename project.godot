@@ -73,12 +73,14 @@ texture={
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Buildings"
-2d_physics/layer_3="Player_Units"
-2d_physics/layer_4="Enemy_Units"
+2d_physics/layer_3="Player_Hurtbox"
+2d_physics/layer_4="Enemy_Hurtbox"
 2d_physics/layer_5="Walkthrough"
 2d_physics/layer_6="Impassable"
 2d_physics/layer_7="Player_Attacks"
 2d_physics/layer_8="Enemy_Attacks"
+2d_physics/layer_9="Player_UnitBodies"
+2d_physics/layer_10="Enemy_UnitBodies"
 
 [rendering]
 

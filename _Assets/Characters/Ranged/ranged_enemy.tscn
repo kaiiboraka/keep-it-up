@@ -191,7 +191,8 @@ _data = {
 radius = 256.0
 
 [node name="Enemy_Ranged" instance=ExtResource("1_85q5s")]
-collision_mask = 15
+collision_layer = 520
+collision_mask = 803
 script = ExtResource("2_lgpei")
 isAttacking = true
 arrow = ExtResource("3_nbs82")

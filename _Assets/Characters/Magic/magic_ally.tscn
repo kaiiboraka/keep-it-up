@@ -191,8 +191,8 @@ _data = {
 radius = 256.0
 
 [node name="Ally_Magic" instance=ExtResource("1_t6il4")]
-collision_layer = 36
-collision_mask = 33
+collision_layer = 260
+collision_mask = 545
 script = ExtResource("2_chwks")
 isAttacking = true
 arrow = ExtResource("3_2svgh")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://o8qnh5ouvp0b"]
+[gd_scene load_steps=15 format=3 uid="uid://o8qnh5ouvp0b"]
 
 [ext_resource type="Script" uid="uid://br785vrj80pen" path="res://_Assets/camera_2d.gd" id="1_0hivi"]
 [ext_resource type="Script" uid="uid://bvp7pqh7kddjl" path="res://_Assets/game.gd" id="1_njsul"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dnr1r28451i1" path="res://_Assets/Characters/Ranged/ranged_enemy.tscn" id="10_28jjb"]
 [ext_resource type="PackedScene" uid="uid://g77bng7caocf" path="res://_Assets/UI/HUD/debug_HUD.tscn" id="10_revmb"]
 [ext_resource type="PackedScene" uid="uid://b0bewjm5kfajt" path="res://_Assets/Characters/Magic/magic_ally.tscn" id="12_gnnea"]
+[ext_resource type="PackedScene" uid="uid://kf5ppmsu0twj" path="res://_Assets/Characters/Melee/melee_ally.tscn" id="13_sj5wc"]
+[ext_resource type="PackedScene" uid="uid://dm0thuyimkpum" path="res://_Assets/Characters/Ranged/ranged_ally.tscn" id="14_xpv5u"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_njsul")
@@ -83,5 +85,17 @@ unique_name_in_owner = true
 
 [node name="Ally_Magic" parent="." instance=ExtResource("12_gnnea")]
 position = Vector2(-48, 436)
+
+[node name="Ally_Melee" parent="." instance=ExtResource("13_sj5wc")]
+position = Vector2(-42, 568)
+
+[node name="Ally_Melee2" parent="." instance=ExtResource("13_sj5wc")]
+position = Vector2(46, 570)
+
+[node name="Ally_Ranged" parent="." instance=ExtResource("14_xpv5u")]
+position = Vector2(65, 495)
+
+[node name="Ally_Ranged2" parent="." instance=ExtResource("14_xpv5u")]
+position = Vector2(-62, 500)
 
 [editable path="Tower"]

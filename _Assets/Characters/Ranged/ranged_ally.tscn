@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnr1r28451i1"]
+[gd_scene load_steps=10 format=3 uid="uid://dm0thuyimkpum"]
 
-[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_85q5s"]
-[ext_resource type="Script" uid="uid://tsbltobf5qsj" path="res://_Assets/Characters/Ranged/RangedUnit.cs" id="2_lgpei"]
-[ext_resource type="PackedScene" uid="uid://v1h7takqv4s7" path="res://_Assets/Characters/Ranged/Arrow.tscn" id="3_nbs82"]
-[ext_resource type="SpriteFrames" uid="uid://3vfatj13bbur" path="res://_Assets/Characters/Ranged/ranged_grunt.res" id="3_x3iq2"]
+[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Unit.tscn" id="1_6n4wh"]
+[ext_resource type="Script" uid="uid://tsbltobf5qsj" path="res://_Assets/Characters/Ranged/RangedUnit.cs" id="2_ncodr"]
+[ext_resource type="PackedScene" uid="uid://v1h7takqv4s7" path="res://_Assets/Characters/Ranged/Arrow.tscn" id="3_gl35l"]
+[ext_resource type="SpriteFrames" uid="uid://3vfatj13bbur" path="res://_Assets/Characters/Ranged/ranged_grunt.res" id="4_1pdmm"]
 
 [sub_resource type="Animation" id="Animation_eghav"]
 length = 0.001
@@ -190,12 +190,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_pi6h4"]
 radius = 256.0
 
-[node name="Enemy_Ranged" instance=ExtResource("1_85q5s")]
-collision_mask = 15
-script = ExtResource("2_lgpei")
+[node name="Ally_Ranged" instance=ExtResource("1_6n4wh")]
+collision_layer = 36
+collision_mask = 33
+script = ExtResource("2_ncodr")
 isAttacking = true
-arrow = ExtResource("3_nbs82")
-isHostile = true
+arrow = ExtResource("3_gl35l")
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -203,7 +203,7 @@ libraries = {
 }
 
 [node name="Sprite2D" parent="." index="1"]
-sprite_frames = ExtResource("3_x3iq2")
+sprite_frames = ExtResource("4_1pdmm")
 animation = &"move"
 
 [node name="AttackDelay" parent="." index="3"]

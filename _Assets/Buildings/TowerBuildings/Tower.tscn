@@ -9,6 +9,7 @@
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_7vsah")
+Gold = 5000
 
 [node name="Building_Melee" parent="." instance=ExtResource("4_vjt4r")]
 script = ExtResource("3_3fp25")
@@ -18,13 +19,16 @@ Name = "Melee"
 position = Vector2(0, -105)
 script = ExtResource("3_3fp25")
 Name = "Ranged"
+healthMax = 100
 
 [node name="Building_Magic" parent="." instance=ExtResource("3_6qcbo")]
 position = Vector2(0, -168)
 script = ExtResource("3_3fp25")
 Name = "Magic"
+healthMax = 100
 
 [node name="Building_Flying" parent="." instance=ExtResource("2_7vsah")]
 position = Vector2(0, -225)
 script = ExtResource("3_3fp25")
 Name = "Flying"
+healthMax = 100

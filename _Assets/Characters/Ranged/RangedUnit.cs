@@ -42,7 +42,7 @@ public partial class RangedUnit : Unit
 		}
 	}
 
-	private void FireArrow()
+	protected virtual void FireProjectile()
 	{
 		var aimDirection = currentTarget.GlobalPosition - GlobalPosition;
 

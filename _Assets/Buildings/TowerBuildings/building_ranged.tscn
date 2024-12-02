@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://omjwmd8s0n6g"]
+[gd_scene load_steps=6 format=3 uid="uid://omjwmd8s0n6g"]
 
 [ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/building.tscn" id="1_1rpow"]
 [ext_resource type="SpriteFrames" uid="uid://c4ix2d7b0l5wa" path="res://_Assets/Buildings/TowerBuildings/tower_02_ranged.res" id="2_j2yjx"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfd05"]
 size = Vector2(160, 66)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j2yjx"]
+a = Vector2(-80, 0)
+b = Vector2(80, 0)
 
 [node name="Building_Ranged" instance=ExtResource("1_1rpow")]
 position = Vector2(0, -33)
@@ -36,3 +40,9 @@ icon = ExtResource("3_j2yjx")
 
 [node name="LeftSpawnButton" parent="BuildingUI" index="3"]
 icon = ExtResource("3_j2yjx")
+
+[node name="RoofStaticBody" parent="." index="6"]
+position = Vector2(0, -32)
+
+[node name="CollisionShape2D" parent="RoofStaticBody" index="0"]
+shape = SubResource("SegmentShape2D_j2yjx")

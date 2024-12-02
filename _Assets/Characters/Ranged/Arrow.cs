@@ -88,14 +88,16 @@ public partial class Arrow : CharacterBody2D
         var currFrame = sprite.Frame;
         Velocity = Vector2.Zero;
         sprite.Frame = currFrame;
-        Reparent(GetParent().GetParent());
+        CallDeferred(MethodName.Reparent,GetTree().Root);
         Despawn();
     }
 
     private void Despawn()
     {
         despawnTimer.Start();
-        attackHitbox.Monitoring = false;
+        attackHitbox.QueueFree();
+        
+        // attackHitbox.Monitoring = false;
         
         // attackHitbox.GetNode<CollisionShape2D>("AttackHitbox").Disabled = true;
     }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnfi4sckqopv5"]
+[gd_scene load_steps=6 format=3 uid="uid://bnfi4sckqopv5"]
 
 [ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/building.tscn" id="1_in1lu"]
 [ext_resource type="SpriteFrames" uid="uid://bv0bxhmdtye7w" path="res://_Assets/Buildings/TowerBuildings/tower_04_roost.res" id="2_ayuri"]
@@ -7,15 +7,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yv4m"]
 size = Vector2(96, 54)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ayuri"]
+a = Vector2(-48, 0)
+b = Vector2(48, 0)
+
 [node name="Building_Flying" instance=ExtResource("1_in1lu")]
 position = Vector2(0, -27)
 UnitCost = 200
 
-[node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("RectangleShape2D_1yv4m")
-
-[node name="BuildingSprite" parent="." index="1"]
+[node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_ayuri")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_1yv4m")
 
 [node name="SpawnerRight" parent="." index="2"]
 position = Vector2(28, 27)
@@ -31,8 +35,14 @@ offset_bottom = -13.0
 offset_top = -24.0
 offset_bottom = 16.0
 
-[node name="SpawnRightButton" parent="BuildingUI" index="2"]
+[node name="RightSpawnButton" parent="BuildingUI" index="2"]
 icon = ExtResource("3_ayuri")
 
-[node name="SpawnLeftButton" parent="BuildingUI" index="3"]
+[node name="LeftSpawnButton" parent="BuildingUI" index="3"]
 icon = ExtResource("3_ayuri")
+
+[node name="RoofStaticBody" parent="." index="6"]
+position = Vector2(0, -26)
+
+[node name="CollisionShape2D" parent="RoofStaticBody" index="0"]
+shape = SubResource("SegmentShape2D_ayuri")

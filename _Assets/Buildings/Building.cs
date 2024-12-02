@@ -11,6 +11,7 @@ public partial class Building : RigidBody2D
 	protected int healthCurrent = 100;
 	[Export] protected int rankMax = 3;
 	protected int rankCurrent = 1;
+	protected bool MaxRank => rankCurrent >= rankMax;
 	[Export] private int baseConstructionTime = 5;
 	protected int constructionTime = 5;
 	[Export] private int baseUpgradeCost = 100;
@@ -37,10 +38,12 @@ public partial class Building : RigidBody2D
 		constructionTimer.WaitTime = baseConstructionTime;
 		constructionTimer.OneShot = true;
 		
+		healthCurrent = healthMax;
 		healthBar.MaxValue = healthMax;
 		healthBar.Value = healthCurrent;
 		
 		UpdateUpgradeCost();
+		upgradeButtonSprite.Frame = rankCurrent;
 	}
 
 
@@ -66,7 +69,7 @@ public partial class Building : RigidBody2D
 	protected virtual void UpdateUpgradeCost()
 	{
 		upgradeCost = (1+rankCurrent) * baseUpgradeCost; 
-		upgradeCostLabel.Text = upgradeCost.ToString() + " g";
+		upgradeCostLabel.Text = MaxRank ? "MAX" : upgradeCost.ToString() + " g";
 	}
 	
 	public void UpgradeTier()
@@ -76,7 +79,7 @@ public partial class Building : RigidBody2D
 			GD.Print("Not enough gold: UPGRADE");
 			return;
 		}
-		if (rankCurrent >= rankMax)
+		if (MaxRank)
 		{
 			GD.Print("Building is MAX rank");
 			return;
@@ -87,6 +90,7 @@ public partial class Building : RigidBody2D
 		constructionTimer.Timeout += ChangeTier;
 		constructionTimer.Start();
 		sprite.Play("Construction");
+		upgradeButton.Disabled = true;
 	}
 
 	public void ChangeTier()
@@ -105,14 +109,19 @@ public partial class Building : RigidBody2D
 		sprite.Play(animationToPlay);
 		rankCurrent++;
 		UpdateUpgradeCost();
-		
-		animationToPlay = nextRank switch
-		{
-			0 or 1 or 2 or 3 => rankMax + "Rank_" + nextRank,
-			(4 or 5) when rankMax == 5 => rankMax + "Rank_" + nextRank,
-			_ => rankMax + "Rank_" + 0,
-		};
-		upgradeButtonSprite.Play(animationToPlay);
+		var oldMax = healthMax;
+		healthMax *= rankCurrent;
+		healthBar.MaxValue = healthMax;
+		healthCurrent += healthMax - oldMax;
+		// var buttonIconSprite = nextRank switch
+		// {
+		// 	0 or 1 or 2 or 3 => rankMax + "Rank_" + nextRank,
+		// 	(4 or 5) when rankMax == 5 => rankMax + "Rank_" + nextRank,
+		// 	_ => rankMax + "Rank_" + 0,
+		// };
+		// upgradeButtonSprite.Play(buttonIconSprite);
+		upgradeButtonSprite.Frame = rankCurrent;
+		upgradeButton.Disabled = false;
 	}
 	
 	protected virtual void UpdateHUDValues()

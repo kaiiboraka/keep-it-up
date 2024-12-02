@@ -12,9 +12,10 @@ size = Vector2(80, 54)
 
 [node name="Goldmine" type="RigidBody2D"]
 position = Vector2(0, -30)
-collision_layer = 4
+collision_layer = 20
 script = ExtResource("1_jinls")
 Name = "Goldmine"
+healthMax = 1000
 rankMax = 5
 
 [node name="BuildingSprite" type="AnimatedSprite2D" parent="."]
@@ -49,6 +50,12 @@ offset_bottom = -50.0
 mouse_filter = 1
 alignment = 0
 
+[node name="UpgradeButtonSprite" type="AnimatedSprite2D" parent="BuildingUI/UpgradeButton"]
+unique_name_in_owner = true
+position = Vector2(20, 20)
+sprite_frames = ExtResource("3_ujdsb")
+animation = &"5_Ranks"
+
 [node name="UpgradeCostLabel" type="Label" parent="BuildingUI/UpgradeButton"]
 unique_name_in_owner = true
 layout_mode = 0
@@ -57,12 +64,6 @@ offset_right = 40.0
 text = "150 g"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="UpgradeButtonSprite" type="AnimatedSprite2D" parent="BuildingUI/UpgradeButton"]
-unique_name_in_owner = true
-position = Vector2(20, 20)
-sprite_frames = ExtResource("3_ujdsb")
-animation = &"5Ranks_0"
 
 [node name="HealthBar" type="TextureProgressBar" parent="BuildingUI"]
 unique_name_in_owner = true

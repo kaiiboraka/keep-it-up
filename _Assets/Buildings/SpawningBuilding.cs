@@ -48,6 +48,7 @@ public partial class SpawningBuilding : Building
 
     public void SpawnRight()
     {
+        GD.Print("SpawnRight");
         if (Tower.Instance.Gold < UnitCost)
         {
             GD.Print("Not enough gold: SPAWN RIGHT");
@@ -61,6 +62,7 @@ public partial class SpawningBuilding : Building
 
     public void SpawnLeft()
     {
+        GD.Print("SpawnLeft");
         if (Tower.Instance.Gold < UnitCost)
         {
             GD.Print("Not enough gold: SPAWN LEFT");

@@ -40,6 +40,7 @@ folder_colors={
 "res://_Assets/Buildings/": "teal",
 "res://_Assets/Characters/": "blue",
 "res://_Assets/Characters/Flying/": "blue",
+"res://_Assets/Characters/Magic/": "purple",
 "res://_Assets/Characters/Melee/": "red",
 "res://_Assets/Characters/Ranged/": "green",
 "res://_Assets/Level/": "purple",
@@ -74,6 +75,8 @@ texture={
 2d_physics/layer_2="Buildings"
 2d_physics/layer_3="Player_Units"
 2d_physics/layer_4="Enemy_Units"
+2d_physics/layer_5="Walkthrough"
+2d_physics/layer_6="Impassable"
 2d_physics/layer_7="Player_Attacks"
 2d_physics/layer_8="Enemy_Attacks"
 

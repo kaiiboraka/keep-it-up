@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://o8qnh5ouvp0b"]
+[gd_scene load_steps=13 format=3 uid="uid://o8qnh5ouvp0b"]
 
 [ext_resource type="Script" uid="uid://br785vrj80pen" path="res://_Assets/camera_2d.gd" id="1_0hivi"]
 [ext_resource type="Script" uid="uid://bvp7pqh7kddjl" path="res://_Assets/game.gd" id="1_njsul"]
 [ext_resource type="Texture2D" uid="uid://w02p4i0in0hp" path="res://_Assets/Level/background.png" id="2_ogrtk"]
 [ext_resource type="PackedScene" uid="uid://cvsov1vpaf34v" path="res://_Assets/Level/floor.tscn" id="3_ho2al"]
-[ext_resource type="PackedScene" uid="uid://wdgwv8do013b" path="res://_Assets/Buildings/Tower.tscn" id="4_i2y2s"]
+[ext_resource type="PackedScene" uid="uid://wdgwv8do013b" path="res://_Assets/Buildings/TowerBuildings/Tower.tscn" id="4_i2y2s"]
 [ext_resource type="PackedScene" uid="uid://ckurpwm3vhvvv" path="res://_Assets/Buildings/Goldmine/Goldmine.tscn" id="5_muavb"]
 [ext_resource type="PackedScene" uid="uid://tjc6cbva4wfk" path="res://_Assets/Characters/Spawner.tscn" id="7_w0ekb"]
 [ext_resource type="PackedScene" uid="uid://cgeycjfau2712" path="res://_Assets/Characters/Flying/flying_enemy.tscn" id="8_n5ola"]
 [ext_resource type="PackedScene" uid="uid://c474aumrkemp4" path="res://_Assets/Characters/Melee/melee_enemy.tscn" id="9_vaxwa"]
 [ext_resource type="PackedScene" uid="uid://dnr1r28451i1" path="res://_Assets/Characters/Ranged/ranged_enemy.tscn" id="10_28jjb"]
 [ext_resource type="PackedScene" uid="uid://g77bng7caocf" path="res://_Assets/UI/HUD/debug_HUD.tscn" id="10_revmb"]
+[ext_resource type="PackedScene" uid="uid://b0bewjm5kfajt" path="res://_Assets/Characters/Magic/magic_ally.tscn" id="12_gnnea"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_njsul")
@@ -50,13 +51,11 @@ DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 [node name="Goldmine_Right" parent="Tower" node_paths=PackedStringArray("DebugHUD") instance=ExtResource("5_muavb")]
 position = Vector2(256, -30)
 Name = "TowerBuilding"
-rankMax = 3
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="Goldmine_Left" parent="Tower" node_paths=PackedStringArray("DebugHUD") instance=ExtResource("5_muavb")]
 position = Vector2(-256, -30)
 Name = "TowerBuilding"
-rankMax = 3
 DebugHUD = NodePath("../../CanvasLayer/DebugHUD")
 
 [node name="FlyingSpawner_Right" parent="." instance=ExtResource("7_w0ekb")]
@@ -81,5 +80,8 @@ SpawnCount = 1
 
 [node name="DebugHUD" parent="CanvasLayer" instance=ExtResource("10_revmb")]
 unique_name_in_owner = true
+
+[node name="Ally_Magic" parent="." instance=ExtResource("12_gnnea")]
+position = Vector2(-48, 436)
 
 [editable path="Tower"]

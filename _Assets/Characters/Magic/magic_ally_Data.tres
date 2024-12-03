@@ -1,0 +1,198 @@
+[gd_resource type="Resource" load_steps=29 format=3 uid="uid://c2y5tqjcwevdv"]
+
+[ext_resource type="Shape2D" uid="uid://ck72vnhx62ewo" path="res://_Assets/Characters/RectangleShape2D_64x40.tres" id="1_6ppnr"]
+[ext_resource type="Resource" uid="uid://btnj2xyfuiy4k" path="res://_Assets/Characters/AllyAttack_CollisionData.tres" id="1_84aek"]
+[ext_resource type="Resource" uid="uid://d2at6tvd5q6ds" path="res://_Assets/Characters/AllyBody_CollisionData.tres" id="3_5yntd"]
+[ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="3_6ppnr"]
+[ext_resource type="Texture2D" uid="uid://dt83ov3iayxar" path="res://_Assets/Characters/Magic/magic_grunt.png" id="4_5yntd"]
+[ext_resource type="PackedScene" uid="uid://v1h7takqv4s7" path="res://_Assets/Characters/Archer/Arrow.tscn" id="4_84aek"]
+[ext_resource type="Script" uid="uid://blq1mt7brjs0v" path="res://_Assets/Characters/RangedUnitData.cs" id="5_5yntd"]
+[ext_resource type="Resource" uid="uid://dwktwvkerlawq" path="res://_Assets/Characters/Projectile_CollisionData.tres" id="6_g3wgj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oavbq"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(168, 94, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p826e"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(252, 94, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbgwa"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(336, 94, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5lf8"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(0, 188, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tla57"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(84, 188, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_474yw"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(168, 188, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w21fw"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(252, 188, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycun"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(336, 188, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw8ni"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(0, 282, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eemp"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(84, 282, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho1dt"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(168, 282, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_defsw"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(252, 282, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdgms"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(0, 0, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36j7f"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(84, 0, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qxxi"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(168, 0, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xloej"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(252, 0, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfcg4"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(336, 0, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c4nx"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(0, 94, 84, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq3r7"]
+atlas = ExtResource("4_5yntd")
+region = Rect2(84, 94, 84, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqq7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oavbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p826e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbgwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5lf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tla57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_474yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbgwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5lf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w21fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hycun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw8ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eemp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho1dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_defsw")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdgms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36j7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qxxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xloej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfcg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c4nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq3r7")
+}],
+"loop": true,
+"name": &"move",
+"speed": 20.0
+}]
+metadata/_aseprite_wizard_source_file_hash_ = "c1c0c61c214c4db1bdf626b29f281635"
+metadata/_aseprite_wizard_config_ = {
+"fields": {
+"do_not_create_resource": false,
+"import_date": "2024-12-03 03:13:26",
+"layer_exclusion_pattern": "",
+"only_visible_layers": true,
+"output_location": "res://_Assets/Characters/Magic",
+"output_name": "",
+"should_round_fps": true,
+"source_file": "res://_Assets/Characters/Magic/magic_grunt.aseprite",
+"split_layers": false
+},
+"group": ""
+}
+
+[resource]
+script = ExtResource("5_5yntd")
+ProjectilePrefab = ExtResource("4_84aek")
+ProjectileCollisionData = ExtResource("6_g3wgj")
+UnitName = "Ally Mage"
+UnitType = 2
+CharacterSprites = SubResource("SpriteFrames_wqq7l")
+isHostile = false
+HealthMax = 100
+SpeedMax = 20
+MotionMode = 0
+AttackRange = 1
+Damage = 20
+AttackDelay = 3.0
+AttackHitbox = ExtResource("1_6ppnr")
+AttackHitboxOffset = Vector2(0, 0)
+DetectionRadius = ExtResource("3_6ppnr")
+DetectionRadiusOffset = Vector2(0, 0)
+CharacterCollision = ExtResource("3_5yntd")
+AttackCollision = ExtResource("1_84aek")

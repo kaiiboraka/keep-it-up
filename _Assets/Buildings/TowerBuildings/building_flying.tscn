@@ -14,6 +14,8 @@ b = Vector2(48, 0)
 [node name="Building_Flying" instance=ExtResource("1_in1lu")]
 position = Vector2(0, -27)
 UnitCost = 200
+UnitToSpawn = 3
+Name = "Gryphon Roost"
 
 [node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_ayuri")

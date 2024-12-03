@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dagaj425elr5w"
+path="res://.godot/imported/arrow_turnaround.aseprite-a01b5fac77c9e5b2d1d0bc1c59e73bb2.res"
+
+[deps]
+
+source_file="res://_Assets/Characters/Archer/arrow_turnaround.aseprite"
+dest_files=["res://.godot/imported/arrow_turnaround.aseprite-a01b5fac77c9e5b2d1d0bc1c59e73bb2.res"]
+
+[params]
+

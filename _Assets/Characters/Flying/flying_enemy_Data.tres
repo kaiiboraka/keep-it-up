@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://bnw8smwnf3qfj"]
+
+[ext_resource type="Shape2D" uid="uid://dkqi1jncrnakb" path="res://_Assets/Characters/RectangleShape2D_64x64.tres" id="1_3g5uj"]
+[ext_resource type="Resource" uid="uid://wdxsodee6uq5" path="res://_Assets/Characters/EnemyAttack_CollisionData.tres" id="1_6bkcq"]
+[ext_resource type="SpriteFrames" uid="uid://drk1g56bkfx30" path="res://_Assets/Characters/Flying/flying_grunt.res" id="2_gvcb0"]
+[ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="3_3g5uj"]
+[ext_resource type="Resource" uid="uid://dqssesv88vnw7" path="res://_Assets/Characters/EnemyBody_CollisionData.tres" id="3_4fshj"]
+[ext_resource type="Script" uid="uid://cp0hdqhsfk2f3" path="res://_Assets/Characters/UnitData.cs" id="4_4fshj"]
+
+[resource]
+script = ExtResource("4_4fshj")
+UnitName = "Enemy Flyer"
+UnitType = 3
+CharacterSprites = ExtResource("2_gvcb0")
+isHostile = true
+HealthMax = 100
+SpeedMax = 30
+MotionMode = 1
+AttackRange = 0
+Damage = 10
+AttackDelay = 2.0
+AttackHitbox = ExtResource("1_3g5uj")
+AttackHitboxOffset = Vector2(0, 0)
+DetectionRadius = ExtResource("3_3g5uj")
+DetectionRadiusOffset = Vector2(0, 0)
+CharacterCollision = ExtResource("3_4fshj")
+AttackCollision = ExtResource("1_6bkcq")

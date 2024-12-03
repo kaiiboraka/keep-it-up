@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgys7ythy4ee4"]
+
+[ext_resource type="PackedScene" uid="uid://ber1yg51m6y7o" path="res://_Assets/Characters/Melee/Unit.tscn" id="1_6sw3p"]
+[ext_resource type="Script" uid="uid://bfhs5yxhb7kji" path="res://_Assets/Characters/FlyingUnit.cs" id="2_1ixtg"]
+[ext_resource type="AnimationLibrary" uid="uid://bs8qp1lqcof5q" path="res://_Assets/Characters/Flying/flying_grunt_AnimLibrary.res" id="3_ens5s"]
+[ext_resource type="SpriteFrames" uid="uid://drk1g56bkfx30" path="res://_Assets/Characters/Flying/flying_grunt.res" id="4_1ixtg"]
+[ext_resource type="Shape2D" uid="uid://dkqi1jncrnakb" path="res://_Assets/Characters/RectangleShape2D_64x64.tres" id="4_brl23"]
+
+[node name="Unit_Flying" instance=ExtResource("1_6sw3p")]
+script = ExtResource("2_1ixtg")
+SceneToSpawn = ExtResource("1_6sw3p")
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": ExtResource("3_ens5s")
+}
+
+[node name="CharacterSprite" parent="." index="1"]
+sprite_frames = ExtResource("4_1ixtg")
+
+[node name="AttackHitbox" parent="AttackArea" index="0"]
+position = Vector2(-32, 0)
+shape = ExtResource("4_brl23")

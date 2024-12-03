@@ -14,6 +14,8 @@ b = Vector2(64, 0)
 [node name="Building_Magic" instance=ExtResource("1_516b5")]
 position = Vector2(0, -30)
 UnitCost = 150
+UnitToSpawn = 2
+Name = "Mage Study"
 
 [node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_jrupq")

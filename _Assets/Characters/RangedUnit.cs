@@ -1,0 +1,76 @@
+using Godot;
+using System;
+
+public partial class RangedUnit : Unit
+{
+	[Export] bool isAttacking = false;
+	float distanceToTarget = Single.PositiveInfinity;
+	Node2D currentTarget;
+
+	private PackedScene projectilePrefab;
+	
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		base._Ready();
+		detectionArea = GetNode<Area2D>("DetectionArea");
+
+		if (Data is RangedUnitData rangedUnitData)
+		{
+			detectionArea.BodyEntered += AimAtTarget;
+			projectilePrefab = rangedUnitData.ProjectilePrefab;
+		}
+		else
+		{
+			GD.PrintErr("Data is not a RangedUnitData");
+		}
+	}
+
+
+	public override void _PhysicsProcess(double delta)
+	{
+		if (!isAttacking) Move(delta);
+		if (detectionArea.HasOverlappingBodies() && !isAttacking && attackTimer.IsStopped())
+		{
+			var targets = detectionArea.GetOverlappingBodies();
+			foreach (var target in targets)
+			{
+				AimAtTarget(target);
+			}
+			StartAttacking();
+		}
+	}
+
+	public void AimAtTarget(Node2D body)
+	{
+		// StartAttacking();
+		var distanceToBody = body.GlobalPosition.DistanceTo(GlobalPosition);
+		if (distanceToBody < distanceToTarget)
+		{
+			currentTarget = body;
+		}
+	}
+
+	protected virtual void FireProjectile()
+	{
+		var aimDirection = currentTarget.GlobalPosition - GlobalPosition;
+
+		var h = currentTarget.GlobalPosition[0];
+		var k = currentTarget.GlobalPosition[1];
+		var x = GlobalPosition.X;
+		var y = GlobalPosition.Y;
+		var a = (y - k) / Mathf.Pow((x - h), 2);
+		var s = 2 * a * (x - h);
+		var b = -s * x + y;
+		var e = s * h + b;
+		
+		Vector2 direction = GlobalPosition.DirectionTo(new Vector2(h, e));
+		Node newArrow = projectilePrefab.Instantiate();
+		AddChild(newArrow);
+		if (newArrow is Arrow arrowInstance)
+		{
+			arrowInstance.Velocity = direction * e;
+			arrowInstance.damage = this.damage;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://btnj2xyfuiy4k"]
+
+[ext_resource type="Script" path="res://_Assets/Characters/CollisionData.cs" id="1_cdqq4"]
+
+[resource]
+script = ExtResource("1_cdqq4")
+Layer = 64
+Mask = 8

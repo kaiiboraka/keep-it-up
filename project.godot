@@ -39,10 +39,10 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 folder_colors={
 "res://_Assets/Buildings/": "teal",
 "res://_Assets/Characters/": "blue",
+"res://_Assets/Characters/Archer/": "green",
 "res://_Assets/Characters/Flying/": "blue",
 "res://_Assets/Characters/Magic/": "purple",
 "res://_Assets/Characters/Melee/": "red",
-"res://_Assets/Characters/Ranged/": "green",
 "res://_Assets/Level/": "purple",
 "res://_Assets/UI/": "pink"
 }

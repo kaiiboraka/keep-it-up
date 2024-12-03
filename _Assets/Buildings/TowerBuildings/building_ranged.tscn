@@ -14,6 +14,8 @@ b = Vector2(80, 0)
 [node name="Building_Ranged" instance=ExtResource("1_1rpow")]
 position = Vector2(0, -33)
 UnitCost = 75
+UnitToSpawn = 1
+Name = "Archery Range"
 
 [node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_j2yjx")

@@ -4,7 +4,7 @@ public partial class SpawningBuilding : Building
 {
     [Export] private int UnitCost = 50;
 
-    [Export] public PackedScene UnitToSpawn;
+    [Export] public UnitType UnitToSpawn;
     
     private Button rightSpawnButton;
     private Button leftSpawnButton;
@@ -24,10 +24,10 @@ public partial class SpawningBuilding : Building
         
         rightSpawner = GetNode<Spawner>("%SpawnerRight");
         leftSpawner = GetNode<Spawner>("%SpawnerLeft");
-
-        rightSpawner.SceneToSpawn = UnitToSpawn;
-        leftSpawner.SceneToSpawn = UnitToSpawn;
-
+        
+        leftSpawner.UnitToSpawn = UnitToSpawn;
+        rightSpawner.UnitToSpawn = UnitToSpawn;
+        
         rightSpawnerLabel = GetNode<Label>("%SpawnRightLabel");
         leftSpawnerLabel = GetNode<Label>("%SpawnLeftLabel");
 
@@ -57,7 +57,7 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        rightSpawner.SpawnScene(UnitToSpawn, false);
+        rightSpawner.SpawnScene(UnitToSpawn);
     }
 
     public void SpawnLeft()
@@ -71,6 +71,6 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        leftSpawner.SpawnScene(UnitToSpawn, false);
+        leftSpawner.SpawnScene(UnitToSpawn);
     }
 }

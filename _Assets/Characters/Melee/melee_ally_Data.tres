@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://cfnheerw1ijtf"]
+
+[ext_resource type="Resource" uid="uid://btnj2xyfuiy4k" path="res://_Assets/Characters/AllyAttack_CollisionData.tres" id="1_w8eoc"]
+[ext_resource type="Shape2D" uid="uid://ck72vnhx62ewo" path="res://_Assets/Characters/RectangleShape2D_64x40.tres" id="1_x37ec"]
+[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Melee/melee_grunt.res" id="2_jx3bq"]
+[ext_resource type="Resource" uid="uid://d2at6tvd5q6ds" path="res://_Assets/Characters/AllyBody_CollisionData.tres" id="3_hyiqn"]
+[ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="3_x37ec"]
+[ext_resource type="Script" uid="uid://cp0hdqhsfk2f3" path="res://_Assets/Characters/UnitData.cs" id="4_hyiqn"]
+
+[resource]
+script = ExtResource("4_hyiqn")
+UnitName = "Ally Melee"
+UnitType = 0
+CharacterSprites = ExtResource("2_jx3bq")
+isHostile = false
+HealthMax = 100
+SpeedMax = 30
+MotionMode = 0
+AttackRange = 0
+Damage = 8
+AttackDelay = 1.0
+AttackHitbox = ExtResource("1_x37ec")
+AttackHitboxOffset = Vector2(0, -4)
+DetectionRadius = ExtResource("3_x37ec")
+DetectionRadiusOffset = Vector2(-32, 0)
+CharacterCollision = ExtResource("3_hyiqn")
+AttackCollision = ExtResource("1_w8eoc")

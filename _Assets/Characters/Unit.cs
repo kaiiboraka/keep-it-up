@@ -1,32 +1,72 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
+// [Tool]
 public partial class Unit : CharacterBody2D
 {
-    [Export] protected int healthCurrent = 100;
-    [Export] protected int healthMax = 100;
-    [Export] protected int speedMax = 10;
-    [Export] protected int damage = 10;
-    [Export] protected float attackDelay = 2f;
+    [Export] public UnitData Data;
+    
+    protected int healthCurrent = 100;
+    protected int healthMax = 100;
+    protected int speedMax = 10;
+    protected int damage = 10;
+    protected float attackDelay = 1f; // 1 for melee, 2 for ranged
 
-    protected RayCast2D lookahead;
+    protected AnimatedSprite2D characterSprite;
     protected AnimationPlayer animationPlayer;
-    protected Area2D attackHitbox;
+    protected string animationLibrary;
+    protected Area2D attackArea;
+    protected Area2D detectionArea;
     protected Timer attackTimer;
     protected int speedCurrent;
 
-    [Export] public bool isHostile = false;
+    public bool isHostile = false;
 
     HashSet<Node> hitTargets = new();
     // Called when the node enters the scene tree for the first time.
+    
+    // [ExportToolButton("Ready")]
+    // public Callable ReadyButton => Callable.From(_Ready);
+    //
     public override void _Ready()
     {
+        Debug.Assert(Data != null, "UnitData cannot be null");
+        
+        characterSprite = GetNode<AnimatedSprite2D>("CharacterSprite");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        attackHitbox = GetNode<Area2D>("Area2D");
-        lookahead = GetNode<RayCast2D>("RayCast2D");
+        attackArea = GetNode<Area2D>("AttackArea");
+        detectionArea = GetNode<Area2D>("DetectionArea");
         attackTimer = GetNode<Timer>("AttackDelay");
+
+        Name = Data.UnitName;
+        isHostile = Data.isHostile;
+        healthMax = Data.HealthMax;
+        speedMax = Data.SpeedMax;
+        damage = Data.Damage;
+        attackDelay = Data.AttackDelay;
         attackTimer.WaitTime = attackDelay;
+        
+        characterSprite.SpriteFrames = Data.CharacterSprites;
+        characterSprite.Frame = 0;
+        characterSprite.SpeedScale = 1.0f;
+        
+        ((CollisionShape2D)attackArea.GetChild(0)).Shape = Data.AttackHitbox;
+        ((CollisionShape2D)attackArea.GetChild(0)).Position += Data.AttackHitboxOffset;
+        
+        ((CollisionShape2D)detectionArea.GetChild(0)).Shape = Data.DetectionRadius;
+        ((CollisionShape2D)detectionArea.GetChild(0)).Position = Data.DetectionRadiusOffset;
+        
+        CollisionLayer = Data.CharacterCollision.Layer;
+        CollisionMask = Data.CharacterCollision.Mask;
+        
+        attackArea.CollisionLayer = Data.AttackCollision.Layer;
+        attackArea.CollisionMask = Data.AttackCollision.Mask;
+        detectionArea.CollisionLayer = Data.AttackCollision.Layer;
+        detectionArea.CollisionMask = Data.AttackCollision.Mask;
+
+        MotionMode = Data.MotionMode;
         
         healthCurrent = healthMax;
         speedCurrent = speedMax;
@@ -45,7 +85,7 @@ public partial class Unit : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (lookahead.IsColliding() && attackTimer.IsStopped())
+        if (detectionArea.HasOverlappingBodies() && attackTimer.IsStopped())
         { 
             StartAttacking();
         }
@@ -56,10 +96,12 @@ public partial class Unit : CharacterBody2D
     {
         var velocity = Velocity;
         velocity.X = speedCurrent * GlobalPosition.Sign().X * (isHostile ? -1 : 1);
-        if (MotionMode == MotionModeEnum.Grounded)
+        velocity.Y = MotionMode switch
         {
-            velocity.Y += 9.8f;
-        }
+            MotionModeEnum.Grounded => velocity.Y + 9.8f,
+            MotionModeEnum.Floating => (float)Mathf.Sin(GlobalPosition.X * Math.PI / 180 * 20) * 50,
+            _ => velocity.Y
+        };
         if (IsOnFloor())
         {
             velocity.Y = 0;
@@ -79,7 +121,7 @@ public partial class Unit : CharacterBody2D
     
     public virtual void Attack()
     {
-        foreach(var target in attackHitbox.GetOverlappingBodies())
+        foreach(var target in attackArea.GetOverlappingBodies())
         {
             if (hitTargets.Contains(target)) continue;
             

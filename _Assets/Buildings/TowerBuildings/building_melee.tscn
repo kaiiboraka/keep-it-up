@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1pafvb6n8604"]
 
 [ext_resource type="PackedScene" uid="uid://c2d7u3psl8w1g" path="res://_Assets/Buildings/building.tscn" id="1_bql20"]
-[ext_resource type="PackedScene" uid="uid://kf5ppmsu0twj" path="res://_Assets/Characters/Melee/melee_ally.tscn" id="2_7we5w"]
+[ext_resource type="Resource" uid="uid://cfnheerw1ijtf" path="res://_Assets/Characters/Melee/melee_ally_Data.tres" id="2_7we5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bql20"]
 size = Vector2(192, 72)
 
 [node name="Building_Melee" instance=ExtResource("1_bql20")]
 UnitToSpawn = ExtResource("2_7we5w")
+Name = "Soldier Barracks"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_bql20")

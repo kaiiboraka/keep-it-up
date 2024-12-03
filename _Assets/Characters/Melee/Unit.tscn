@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://ber1yg51m6y7o"]
+
+[ext_resource type="Script" uid="uid://b6ldrf7y7238l" path="res://_Assets/Characters/Unit.cs" id="1_g07e3"]
+[ext_resource type="Resource" uid="uid://d20gxut2k1wjr" path="res://_Assets/Characters/Melee/melee_enemy_Data.tres" id="2_g07e3"]
+[ext_resource type="AnimationLibrary" uid="uid://dcssjdjj7332w" path="res://_Assets/Characters/Melee/melee_grunt_AnimLibrary.res" id="3_1irhr"]
+[ext_resource type="SpriteFrames" uid="uid://d1bu2x7rl0h2o" path="res://_Assets/Characters/Melee/melee_grunt.res" id="4_jtn0q"]
+[ext_resource type="Shape2D" uid="uid://ck72vnhx62ewo" path="res://_Assets/Characters/RectangleShape2D_64x40.tres" id="5_yuu44"]
+[ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="6_fvfya"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tayl"]
+radius = 12.0
+height = 32.0
+
+[node name="Unit" type="CharacterBody2D"]
+collision_layer = 40
+collision_mask = 35
+script = ExtResource("1_g07e3")
+Data = ExtResource("2_g07e3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": ExtResource("3_1irhr")
+}
+autoplay = "move"
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -6)
+sprite_frames = ExtResource("4_jtn0q")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7tayl")
+
+[node name="AttackDelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="AttackHitbox" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-32, -4)
+shape = ExtResource("5_yuu44")
+disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="DetectionRadius" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-32, 0)
+shape = ExtResource("6_fvfya")

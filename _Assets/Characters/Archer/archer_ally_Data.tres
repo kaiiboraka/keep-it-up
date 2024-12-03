@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://qbdbh281lxsb"]
+
+[ext_resource type="Shape2D" uid="uid://dkqi1jncrnakb" path="res://_Assets/Characters/RectangleShape2D_64x64.tres" id="1_njmdj"]
+[ext_resource type="Resource" uid="uid://btnj2xyfuiy4k" path="res://_Assets/Characters/AllyAttack_CollisionData.tres" id="1_y53yp"]
+[ext_resource type="SpriteFrames" uid="uid://3vfatj13bbur" path="res://_Assets/Characters/Archer/ranged_grunt.res" id="2_8ilg4"]
+[ext_resource type="Resource" uid="uid://d2at6tvd5q6ds" path="res://_Assets/Characters/AllyBody_CollisionData.tres" id="3_4a88c"]
+[ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="3_njmdj"]
+[ext_resource type="PackedScene" uid="uid://v1h7takqv4s7" path="res://_Assets/Characters/Archer/Arrow.tscn" id="4_y53yp"]
+[ext_resource type="Script" uid="uid://blq1mt7brjs0v" path="res://_Assets/Characters/RangedUnitData.cs" id="5_4a88c"]
+[ext_resource type="Resource" uid="uid://dwktwvkerlawq" path="res://_Assets/Characters/Projectile_CollisionData.tres" id="6_y13ms"]
+
+[resource]
+script = ExtResource("5_4a88c")
+ProjectilePrefab = ExtResource("4_y53yp")
+ProjectileCollisionData = ExtResource("6_y13ms")
+UnitName = "Enemy Archer"
+UnitType = 1
+CharacterSprites = ExtResource("2_8ilg4")
+isHostile = false
+HealthMax = 100
+SpeedMax = 30
+MotionMode = 0
+AttackRange = 1
+Damage = 10
+AttackDelay = 2.0
+AttackHitbox = ExtResource("1_njmdj")
+AttackHitboxOffset = Vector2(0, 0)
+DetectionRadius = ExtResource("3_njmdj")
+DetectionRadiusOffset = Vector2(0, 0)
+CharacterCollision = ExtResource("3_4a88c")
+AttackCollision = ExtResource("1_y53yp")

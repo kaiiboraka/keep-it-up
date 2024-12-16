@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=20 format=3 uid="uid://d20gxut2k1wjr"]
+[gd_resource type="Resource" load_steps=19 format=3 uid="uid://d20gxut2k1wjr"]
 
 [ext_resource type="Shape2D" uid="uid://ck72vnhx62ewo" path="res://_Assets/Characters/RectangleShape2D_64x40.tres" id="1_44vua"]
-[ext_resource type="AnimationLibrary" uid="uid://dcssjdjj7332w" path="res://_Assets/Characters/Melee/melee_grunt_AnimLibrary.res" id="1_a3mec"]
 [ext_resource type="Resource" uid="uid://wdxsodee6uq5" path="res://_Assets/Characters/EnemyAttack_CollisionData.tres" id="1_t5vfj"]
 [ext_resource type="Shape2D" uid="uid://dwu8tf24nhd44" path="res://_Assets/Characters/CircleShape2D_40r.tres" id="3_44vua"]
 [ext_resource type="Resource" uid="uid://dqssesv88vnw7" path="res://_Assets/Characters/EnemyBody_CollisionData.tres" id="3_a3mec"]
@@ -117,7 +116,6 @@ script = ExtResource("4_a3mec")
 UnitName = "Enemy Melee"
 UnitType = 0
 CharacterSprites = SubResource("SpriteFrames_f2s44")
-AnimationLibrary = ExtResource("1_a3mec")
 isHostile = true
 HealthMax = 100
 SpeedMax = 30

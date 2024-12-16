@@ -13,9 +13,7 @@ b = Vector2(80, 0)
 
 [node name="Building_Ranged" instance=ExtResource("1_1rpow")]
 position = Vector2(0, -33)
-UnitCost = 75
-UnitToSpawn = 1
-Name = "Archery Range"
+healthMax = 100
 
 [node name="BuildingSprite" parent="." index="0"]
 sprite_frames = ExtResource("2_j2yjx")
@@ -24,10 +22,10 @@ sprite_frames = ExtResource("2_j2yjx")
 shape = SubResource("RectangleShape2D_pfd05")
 
 [node name="SpawnerRight" parent="." index="2"]
-position = Vector2(36, 33)
+position = Vector2(36, 32)
 
 [node name="SpawnerLeft" parent="." index="3"]
-position = Vector2(-36, 33)
+position = Vector2(-36, 32)
 
 [node name="BuildingUI" parent="." index="4"]
 offset_top = -7.0

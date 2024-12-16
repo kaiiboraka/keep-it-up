@@ -16,6 +16,7 @@ public partial class SpawningBuilding : Building
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        base._Ready();
         rightSpawnButton = GetNode<Button>("%RightSpawnButton");
         leftSpawnButton = GetNode<Button>("%LeftSpawnButton");
 
@@ -35,20 +36,15 @@ public partial class SpawningBuilding : Building
         leftSpawnerLabel.Text = UnitCost.ToString() + " g";
     }
 
-    public override void _Process(double delta)
-    {
-        UpdateHUDValues();
-    }
-    
     protected override void UpdateUpgradeCost()
     {
         upgradeCost = (1+rankCurrent) * UnitCost; 
-        upgradeCostLabel.Text = upgradeCost.ToString() + " g";
+        upgradeCostLabel.Text = MaxRank ? "MAX" : upgradeCost + " g";
     }
+    
 
     public void SpawnRight()
     {
-        GD.Print("SpawnRight");
         if (Tower.Instance.Gold < UnitCost)
         {
             GD.Print("Not enough gold: SPAWN RIGHT");
@@ -57,12 +53,11 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        rightSpawner.SpawnScene(UnitToSpawn);
+        rightSpawner.ForceSpawn(UnitToSpawn);
     }
 
     public void SpawnLeft()
     {
-        GD.Print("SpawnLeft");
         if (Tower.Instance.Gold < UnitCost)
         {
             GD.Print("Not enough gold: SPAWN LEFT");
@@ -71,6 +66,6 @@ public partial class SpawningBuilding : Building
 
         Tower.Instance.Gold -= UnitCost;
 
-        leftSpawner.SpawnScene(UnitToSpawn);
+        leftSpawner.ForceSpawn(UnitToSpawn);
     }
 }

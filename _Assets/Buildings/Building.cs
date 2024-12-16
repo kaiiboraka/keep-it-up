@@ -37,6 +37,7 @@ public partial class Building : RigidBody2D
 		constructionTimer = GetNode<Timer>("ConstructionTimer");
 		constructionTimer.WaitTime = baseConstructionTime;
 		constructionTimer.OneShot = true;
+		constructionTimer.Timeout += ChangeTier;
 		
 		healthCurrent = healthMax;
 		healthBar.MaxValue = healthMax;
@@ -69,7 +70,7 @@ public partial class Building : RigidBody2D
 	protected virtual void UpdateUpgradeCost()
 	{
 		upgradeCost = (1+rankCurrent) * baseUpgradeCost; 
-		upgradeCostLabel.Text = MaxRank ? "MAX" : upgradeCost.ToString() + " g";
+		upgradeCostLabel.Text = MaxRank ? "MAX" : upgradeCost + " g";
 	}
 	
 	public void UpgradeTier()
@@ -87,7 +88,6 @@ public partial class Building : RigidBody2D
 		
 		Tower.Instance.Gold -= upgradeCost;
 		
-		constructionTimer.Timeout += ChangeTier;
 		constructionTimer.Start();
 		sprite.Play("Construction");
 		upgradeButton.Disabled = true;

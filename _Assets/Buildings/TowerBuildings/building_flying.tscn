@@ -25,9 +25,11 @@ shape = SubResource("RectangleShape2D_1yv4m")
 
 [node name="SpawnerRight" parent="." index="2"]
 position = Vector2(28, 27)
+UnitToSpawn = 3
 
 [node name="SpawnerLeft" parent="." index="3"]
 position = Vector2(-28, 27)
+UnitToSpawn = 3
 
 [node name="BuildingUI" parent="." index="4"]
 offset_top = -13.0

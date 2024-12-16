@@ -87,11 +87,15 @@ public partial class Spawner : Node2D
         SpawnScene(UnitToSpawn);
     }
 
+    public void ForceSpawn(UnitType unit)
+    {
+        InstantiateScene(Units[unit].Item2);
+    }
+
     public void SpawnScene(UnitType unit)
     {
         if (unit == null) return;
         if (SpawnCount == 0) return;
-
         if (SpawnCount == 1)
         {
             InstantiateScene(Units[unit].Item2);
@@ -109,23 +113,6 @@ public partial class Spawner : Node2D
         if (instance is Unit unit)
         {
             unit.Data = unitToSpawn;
-            // switch (unitToSpawn.UnitType)
-            // {
-            //     case UnitType.Soldier:
-            //         unit.SetScript(GD.Load("res://_Assets/Characters/Unit.cs"));
-            //         break;
-            //     case UnitType.Archer:
-            //         unit.SetScript(GD.Load("res://_Assets/Characters/RangedUnit.cs"));
-            //         break;
-            //     case UnitType.Mage:
-            //         unit.SetScript(GD.Load("res://_Assets/Characters/RangedUnit.cs"));
-            //         break;
-            //     case UnitType.Flying:
-            //         unit.SetScript(GD.Load("res://_Assets/Characters/FlyingUnit.cs"));
-            //         break;
-            //     default:
-            //         throw new ArgumentOutOfRangeException();
-            // }
         }
 
         AddChild(instance);
